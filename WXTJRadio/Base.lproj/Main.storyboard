@@ -17,6 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Song displayed here!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKv-M9-h1X">
+                                <rect key="frame" x="219" y="64" width="163" height="92"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wc6-LL-Vcc">
                                 <rect key="frame" x="20" y="164" width="560" height="111"/>
                                 <subviews>
@@ -54,6 +61,7 @@
                                 <constraints>
                                     <constraint firstItem="jMN-Xd-xre" firstAttribute="leading" secondItem="wc6-LL-Vcc" secondAttribute="leading" id="ABI-Pa-2w0"/>
                                     <constraint firstItem="Unz-JS-T0p" firstAttribute="leading" secondItem="wc6-LL-Vcc" secondAttribute="leading" id="Fmm-CJ-uBS"/>
+                                    <constraint firstItem="JkZ-WR-Ubo" firstAttribute="top" secondItem="jMN-Xd-xre" secondAttribute="bottom" id="Lm2-Sx-FC9"/>
                                     <constraint firstItem="8aT-cC-aui" firstAttribute="leading" secondItem="wc6-LL-Vcc" secondAttribute="leading" id="Mgt-j8-UHB"/>
                                     <constraint firstAttribute="trailing" secondItem="JkZ-WR-Ubo" secondAttribute="trailing" id="OKo-jE-qq5"/>
                                     <constraint firstAttribute="trailing" secondItem="jMN-Xd-xre" secondAttribute="trailing" id="QBn-O7-8Ge"/>
@@ -62,24 +70,39 @@
                                     <constraint firstAttribute="trailing" secondItem="Unz-JS-T0p" secondAttribute="trailing" id="p47-ql-Zqw"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Song displayed here!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKv-M9-h1X">
-                                <rect key="frame" x="219" y="64" width="163" height="92"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtO-Dw-m49">
+                                <rect key="frame" x="248" y="303" width="104" height="30"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Set Reminder"/>
+                                <connections>
+                                    <action selector="setReminder:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s40-OA-xcx"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="FJT-du-0da">
+                                <rect key="frame" x="0.0" y="341" width="600" height="216"/>
+                                <animations/>
+                                <date key="date" timeIntervalSinceReferenceDate="467139314.95247602">
+                                    <!--2015-10-21 16:55:14 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="FJT-du-0da" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="0Hb-t1-2c8"/>
                             <constraint firstItem="ZKv-M9-h1X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1sO-2I-M2O"/>
                             <constraint firstItem="wc6-LL-Vcc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3lo-z5-Obv"/>
                             <constraint firstItem="wc6-LL-Vcc" firstAttribute="top" secondItem="Ddn-xv-uYV" secondAttribute="bottom" constant="100" id="5Ia-nC-dfc"/>
                             <constraint firstItem="ZKv-M9-h1X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7Rz-c7-dyB"/>
+                            <constraint firstItem="HtO-Dw-m49" firstAttribute="top" secondItem="wc6-LL-Vcc" secondAttribute="bottom" constant="28" id="HkC-Pj-l8E"/>
                             <constraint firstItem="ZKv-M9-h1X" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="I6A-9g-1aM"/>
+                            <constraint firstItem="HtO-Dw-m49" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="IoA-sO-ew7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FJT-du-0da" secondAttribute="trailing" id="M7a-2c-7BN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wc6-LL-Vcc" secondAttribute="trailing" id="Ng0-gu-cSy"/>
+                            <constraint firstItem="HtO-Dw-m49" firstAttribute="top" secondItem="wc6-LL-Vcc" secondAttribute="bottom" constant="28" id="Wjv-rC-KMi"/>
+                            <constraint firstItem="FJT-du-0da" firstAttribute="top" secondItem="HtO-Dw-m49" secondAttribute="bottom" constant="8" id="YlG-kM-OlC"/>
                             <constraint firstItem="ZKv-M9-h1X" firstAttribute="top" secondItem="Ddn-xv-uYV" secondAttribute="bottom" id="aBB-5J-uxd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HtO-Dw-m49" secondAttribute="trailing" id="bAR-p6-SdJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Main Page" id="uie-eO-zLB">
@@ -92,6 +115,7 @@
                     <connections>
                         <outlet property="artistText" destination="JkZ-WR-Ubo" id="vEH-ma-q7p"/>
                         <outlet property="outputText" destination="ZKv-M9-h1X" id="76q-uB-eDO"/>
+                        <outlet property="reminderDatePicker" destination="FJT-du-0da" id="Uo1-EP-EZU"/>
                         <outlet property="songText" destination="jMN-Xd-xre" id="uvS-ac-XIW"/>
                     </connections>
                 </viewController>
@@ -111,13 +135,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bh5-AI-tvo">
-                                <rect key="frame" x="180" y="286" width="240" height="128"/>
-                                <animations/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Song displayed here!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGj-Zh-Qah">
                                 <rect key="frame" x="220" y="143" width="161" height="107"/>
                                 <animations/>
@@ -131,15 +148,10 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="LGj-Zh-Qah" secondAttribute="trailing" id="2E0-Pi-wYo"/>
                             <constraint firstItem="LGj-Zh-Qah" firstAttribute="leading" secondItem="jyE-Do-3G7" secondAttribute="leadingMargin" id="Dao-hG-FIe"/>
-                            <constraint firstItem="bh5-AI-tvo" firstAttribute="leading" secondItem="jyE-Do-3G7" secondAttribute="leadingMargin" id="PVZ-Lz-Ul9"/>
-                            <constraint firstItem="bh5-AI-tvo" firstAttribute="top" secondItem="LGj-Zh-Qah" secondAttribute="bottom" constant="36" id="TSJ-gg-bhz"/>
                             <constraint firstItem="LGj-Zh-Qah" firstAttribute="top" secondItem="SJX-hN-1Ny" secondAttribute="bottom" id="ZW8-gm-JeY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bh5-AI-tvo" secondAttribute="trailing" id="lqi-Bq-2Tk"/>
-                            <constraint firstItem="ZHz-t7-HbK" firstAttribute="top" secondItem="bh5-AI-tvo" secondAttribute="bottom" constant="186" id="nNz-BD-Cgx"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="playlist" destination="bh5-AI-tvo" id="a3r-v1-RRr"/>
                         <outlet property="playlistEntry" destination="LGj-Zh-Qah" id="Rey-Se-v4H"/>
                     </connections>
                 </viewController>
