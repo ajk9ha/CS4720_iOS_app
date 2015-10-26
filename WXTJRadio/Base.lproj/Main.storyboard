@@ -21,7 +21,7 @@
                                 <rect key="frame" x="219" y="64" width="163" height="92"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wc6-LL-Vcc">
@@ -31,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Song Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jMN-Xd-xre">
@@ -70,39 +70,28 @@
                                     <constraint firstAttribute="trailing" secondItem="Unz-JS-T0p" secondAttribute="trailing" id="p47-ql-Zqw"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtO-Dw-m49">
-                                <rect key="frame" x="248" y="303" width="104" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dK1-iq-hHT">
+                                <rect key="frame" x="20" y="386" width="560" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Set Reminder"/>
+                                <state key="normal" title="Play"/>
                                 <connections>
-                                    <action selector="setReminder:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s40-OA-xcx"/>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vbm-rw-C7A"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="FJT-du-0da">
-                                <rect key="frame" x="0.0" y="341" width="600" height="216"/>
-                                <animations/>
-                                <date key="date" timeIntervalSinceReferenceDate="467139314.95247602">
-                                    <!--2015-10-21 16:55:14 +0000-->
-                                </date>
-                            </datePicker>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FJT-du-0da" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="0Hb-t1-2c8"/>
                             <constraint firstItem="ZKv-M9-h1X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1sO-2I-M2O"/>
                             <constraint firstItem="wc6-LL-Vcc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3lo-z5-Obv"/>
                             <constraint firstItem="wc6-LL-Vcc" firstAttribute="top" secondItem="Ddn-xv-uYV" secondAttribute="bottom" constant="100" id="5Ia-nC-dfc"/>
                             <constraint firstItem="ZKv-M9-h1X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7Rz-c7-dyB"/>
-                            <constraint firstItem="HtO-Dw-m49" firstAttribute="top" secondItem="wc6-LL-Vcc" secondAttribute="bottom" constant="28" id="HkC-Pj-l8E"/>
                             <constraint firstItem="ZKv-M9-h1X" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="I6A-9g-1aM"/>
-                            <constraint firstItem="HtO-Dw-m49" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="IoA-sO-ew7"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FJT-du-0da" secondAttribute="trailing" id="M7a-2c-7BN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wc6-LL-Vcc" secondAttribute="trailing" id="Ng0-gu-cSy"/>
-                            <constraint firstItem="HtO-Dw-m49" firstAttribute="top" secondItem="wc6-LL-Vcc" secondAttribute="bottom" constant="28" id="Wjv-rC-KMi"/>
-                            <constraint firstItem="FJT-du-0da" firstAttribute="top" secondItem="HtO-Dw-m49" secondAttribute="bottom" constant="8" id="YlG-kM-OlC"/>
+                            <constraint firstItem="dK1-iq-hHT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="RA3-X4-kvt"/>
                             <constraint firstItem="ZKv-M9-h1X" firstAttribute="top" secondItem="Ddn-xv-uYV" secondAttribute="bottom" id="aBB-5J-uxd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="HtO-Dw-m49" secondAttribute="trailing" id="bAR-p6-SdJ"/>
+                            <constraint firstItem="dK1-iq-hHT" firstAttribute="top" secondItem="wc6-LL-Vcc" secondAttribute="bottom" constant="111" id="w5d-tG-bvv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dK1-iq-hHT" secondAttribute="trailing" id="zmS-4l-n19"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Main Page" id="uie-eO-zLB">
@@ -115,7 +104,7 @@
                     <connections>
                         <outlet property="artistText" destination="JkZ-WR-Ubo" id="vEH-ma-q7p"/>
                         <outlet property="outputText" destination="ZKv-M9-h1X" id="76q-uB-eDO"/>
-                        <outlet property="reminderDatePicker" destination="FJT-du-0da" id="Uo1-EP-EZU"/>
+                        <outlet property="playButton" destination="dK1-iq-hHT" id="4g3-Wi-aW1"/>
                         <outlet property="songText" destination="jMN-Xd-xre" id="uvS-ac-XIW"/>
                     </connections>
                 </viewController>
@@ -139,20 +128,42 @@
                                 <rect key="frame" x="220" y="143" width="161" height="107"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtO-Dw-m49">
+                                <rect key="frame" x="248" y="308" width="104" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Set Reminder"/>
+                                <connections>
+                                    <action selector="setReminder:" destination="9tw-GK-dtc" eventType="touchUpInside" id="0Zi-oU-ch7"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JjA-Pc-UOG">
+                                <rect key="frame" x="0.0" y="357" width="600" height="216"/>
+                                <animations/>
+                                <date key="date" timeIntervalSinceReferenceDate="467508977.53007102">
+                                    <!--2015-10-25 23:36:17 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="LGj-Zh-Qah" secondAttribute="trailing" id="2E0-Pi-wYo"/>
+                            <constraint firstItem="JjA-Pc-UOG" firstAttribute="leading" secondItem="jyE-Do-3G7" secondAttribute="leadingMargin" id="8O5-pT-uj7"/>
                             <constraint firstItem="LGj-Zh-Qah" firstAttribute="leading" secondItem="jyE-Do-3G7" secondAttribute="leadingMargin" id="Dao-hG-FIe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HtO-Dw-m49" secondAttribute="trailing" id="IKK-Pa-xDr"/>
+                            <constraint firstItem="HtO-Dw-m49" firstAttribute="leading" secondItem="jyE-Do-3G7" secondAttribute="leadingMargin" id="VUK-0l-qou"/>
                             <constraint firstItem="LGj-Zh-Qah" firstAttribute="top" secondItem="SJX-hN-1Ny" secondAttribute="bottom" id="ZW8-gm-JeY"/>
+                            <constraint firstItem="JjA-Pc-UOG" firstAttribute="top" secondItem="HtO-Dw-m49" secondAttribute="bottom" constant="19" id="e7T-IA-yV8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JjA-Pc-UOG" secondAttribute="trailing" id="eGm-N5-ATw"/>
+                            <constraint firstItem="HtO-Dw-m49" firstAttribute="top" secondItem="LGj-Zh-Qah" secondAttribute="bottom" constant="58" id="sZj-0P-lbb"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="playlistEntry" destination="LGj-Zh-Qah" id="Rey-Se-v4H"/>
+                        <outlet property="reminderDatePicker" destination="JjA-Pc-UOG" id="VTL-z2-LvJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bCK-1C-tJT" userLabel="First Responder" sceneMemberID="firstResponder"/>
