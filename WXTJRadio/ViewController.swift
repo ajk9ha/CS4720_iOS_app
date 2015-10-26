@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EventKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
@@ -14,13 +15,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var artistText: UITextField!
     @IBOutlet weak var songText: UITextField!
     @IBOutlet weak var outputText: UILabel!
+    @IBOutlet weak var reminderDatePicker: UIDatePicker!
+    
+    var appDelegate: AppDelegate?
+    
     var songInfoText = ""
+    var eventStore = EKEventStore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        songText.delegate = self;
-        artistText.delegate = self;
+        songText.delegate = self
+        artistText.delegate = self
         
     }
 
@@ -29,6 +35,61 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    /* Code for setting up the Alarm notification, which calls createReminder */
+    @IBAction func setReminder(sender: UIButton) {
+        
+        appDelegate = UIApplication.sharedApplication().delegate
+            as? AppDelegate
+        if appDelegate!.eventStore == nil {
+            appDelegate!.eventStore = EKEventStore()
+            appDelegate!.eventStore!.requestAccessToEntityType(
+                EKEntityType.Reminder, completion: {(granted, error) in
+                    if !granted {
+                        print("Access to store not granted")
+                        print(error!.localizedDescription)
+                    } else {
+                        print("Access granted")
+                    }
+            })
+        }
+        
+        if (appDelegate!.eventStore != nil) {
+            self.createReminder()
+        }
+        
+    }
+    
+    /* Code for setting the details of the alarm notification */
+    func createReminder() {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .MediumStyle
+        
+        eventStore.requestAccessToEntityType(EKEntityType.Reminder,
+            completion: {(granted: Bool, error:NSError?) in
+                if !granted {
+                    print("Access to store not granted")
+                }
+        })
+        
+        let reminder = EKReminder(eventStore: appDelegate!.eventStore!)
+        reminder.title = "Don't forget to tune into your favorite show!"
+        reminder.calendar = appDelegate!.eventStore!.defaultCalendarForNewReminders()
+
+        var date = reminderDatePicker.date
+        print("date: \(date)")
+        
+        let alarm = EKAlarm(absoluteDate: date)
+        
+        reminder.addAlarm(alarm)
+        
+        do {
+            try appDelegate!.eventStore!.saveReminder(reminder, commit:true)
+        } catch {
+            return
+        }
+
+    }
+
     // Mark: Actions
     @IBAction func setSong(sender: UIButton) {
         songInfoText = songText.text! + " by " + artistText.text!
@@ -46,7 +107,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let favoritesView = segue.destinationViewController as! FavoriteSongsViewController
         
         favoritesView.playlistText = songInfoText
-        favoritesView.playlist.text = songInfoText
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

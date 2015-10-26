@@ -11,7 +11,6 @@ import UIKit
 class FavoriteSongsViewController: UIViewController {
     
     @IBOutlet weak var playlistEntry: UILabel!
-    @IBOutlet weak var playlist: UITextView!
     var playlistText = "Initial Value"
 
     override func viewDidLoad() {
@@ -20,7 +19,6 @@ class FavoriteSongsViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         playlistEntry.text = playlistText
-        playlist.text.appendContentsOf(playlistText)
     }
 
     override func didReceiveMemoryWarning() {
