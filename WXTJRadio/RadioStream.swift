@@ -12,12 +12,20 @@ import AVFoundation
 
 class RadioStream {
     static let sharedInstance = RadioStream()
-    private var player = AVPlayer(URL: NSURL(string: "http://streams.wtju.net:8000/wtjx-128.mp3")!)
+    private var player: AVPlayer!
     private var isPlaying = false
     
     func play() {
+        
+        let urlString = "http://streams.wtju.net:8000/wtjx-128.mp3"
+        let url = NSURL(string: urlString)
+
+        player = AVPlayer(URL: url!)
+        
         print("Radio stream starting...")
-        player.play()
+        do{
+            player.play()
+        }
         
         print(player.volume)
         

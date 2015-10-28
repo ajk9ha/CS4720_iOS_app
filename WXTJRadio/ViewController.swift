@@ -8,6 +8,7 @@
 
 import UIKit
 import EventKit
+import AVFoundation
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
@@ -16,7 +17,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var songText: UITextField!
     @IBOutlet weak var outputText: UILabel!
     @IBOutlet weak var playButton: UIButton!
-    
     
     var appDelegate: AppDelegate?
     
@@ -30,7 +30,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         artistText.delegate = self
         
         playButton.setTitle("Play", forState: UIControlState.Normal)
-
         
     }
 
