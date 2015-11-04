@@ -28,7 +28,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         songText.delegate = self
         artistText.delegate = self
-        
+        do {
+            let path = NSTemporaryDirectory() + "savedText.txt"
+            let readString = try String(contentsOfFile: path, encoding: NSUTF8StringEncoding)
+            outputText.text = readString }
+            catch let error as NSError {
+            outputText.text = "No file saved yet!"
+            print(error)
+        }
         playButton.setTitle("Play", forState: UIControlState.Normal)
         
     }
@@ -122,7 +129,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // Mark: Actions
     @IBAction func setSong(sender: UIButton) {
         songInfoText = songText.text! + " by " + artistText.text!
-        outputText.text = songInfoText    }
+        outputText.text = songInfoText
+        
+        let someText = songText.text! + " by " + artistText.text!
+        let destinationPath = NSTemporaryDirectory()+"savedText.txt"
+        do {
+            try someText.writeToFile(destinationPath,atomically: true,encoding: NSUTF8StringEncoding)
+        } catch let error as NSError {
+            print("An error occurred: \(error)") }
+    }
+        
     
     // MARK: - Navigation
     
