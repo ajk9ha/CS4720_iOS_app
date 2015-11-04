@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C7182D351BD47D3400D7A9A1 /* FavoriteSongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7182D341BD47D3400D7A9A1 /* FavoriteSongsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		C7182D351BD47D3400D7A9A1 /* FavoriteSongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7182D341BD47D3400D7A9A1 /* FavoriteSongsViewController.swift */; };
 		C72012491BDDA03800DA3DD0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72012481BDDA03800DA3DD0 /* AVFoundation.framework */; };
-		C720124B1BDDA11200DA3DD0 /* RadioStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = C720124A1BDDA11200DA3DD0 /* RadioStream.swift */; settings = {ASSET_TAGS = (); }; };
+		C720124B1BDDA11200DA3DD0 /* RadioStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = C720124A1BDDA11200DA3DD0 /* RadioStream.swift */; };
 		C7DF872A1BD1A9ED00EBC0F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF87291BD1A9ED00EBC0F0 /* AppDelegate.swift */; };
 		C7DF872C1BD1A9ED00EBC0F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF872B1BD1A9ED00EBC0F0 /* ViewController.swift */; };
 		C7DF872F1BD1A9ED00EBC0F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7DF872D1BD1A9ED00EBC0F0 /* Main.storyboard */; };
 		C7DF87311BD1A9ED00EBC0F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7DF87301BD1A9ED00EBC0F0 /* Assets.xcassets */; };
 		C7DF87341BD1A9ED00EBC0F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7DF87321BD1A9ED00EBC0F0 /* LaunchScreen.storyboard */; };
+		E4C680A71BEAB48A0054D62A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C680A61BEAB48A0054D62A /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C7DF87301BD1A9ED00EBC0F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7DF87331BD1A9ED00EBC0F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7DF87351BD1A9ED00EBC0F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4C680A61BEAB48A0054D62A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4C680A71BEAB48A0054D62A /* CoreLocation.framework in Frameworks */,
 				C72012491BDDA03800DA3DD0 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,6 +48,7 @@
 		C7DF871D1BD1A9EC00EBC0F0 = {
 			isa = PBXGroup;
 			children = (
+				E4C680A61BEAB48A0054D62A /* CoreLocation.framework */,
 				C72012481BDDA03800DA3DD0 /* AVFoundation.framework */,
 				C7DF87281BD1A9ED00EBC0F0 /* WXTJRadio */,
 				C7DF87271BD1A9ED00EBC0F0 /* Products */,
@@ -105,7 +109,7 @@
 				TargetAttributes = {
 					C7DF87251BD1A9EC00EBC0F0 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = NHEXA9YF67;
+						DevelopmentTeam = 2SG82LE27S;
 					};
 				};
 			};
@@ -260,10 +264,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = WXTJRadio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cs.virginia.edu.WXTJRadio;
+				PRODUCT_BUNDLE_IDENTIFIER = cs.virginia.edu.WXTJRadioMatt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -272,10 +278,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = WXTJRadio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cs.virginia.edu.WXTJRadio;
+				PRODUCT_BUNDLE_IDENTIFIER = cs.virginia.edu.WXTJRadioMatt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

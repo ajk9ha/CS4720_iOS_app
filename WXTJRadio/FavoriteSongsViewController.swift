@@ -26,7 +26,14 @@ class FavoriteSongsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        playlistEntry.text = playlistText
+        do {
+            let path = NSTemporaryDirectory() + "savedText.txt"
+            let readString = try String(contentsOfFile: path, encoding: NSUTF8StringEncoding)
+            playlistEntry.text = readString }
+        catch let error as NSError {
+            playlistEntry.text = "No file saved yet!"
+            print(error)
+        }
     }
 
     override func didReceiveMemoryWarning() {
