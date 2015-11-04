@@ -9,6 +9,8 @@
 import UIKit
 import EventKit
 import AVFoundation
+import Foundation
+import CoreLocation
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
@@ -17,6 +19,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var songText: UITextField!
     @IBOutlet weak var outputText: UILabel!
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var lat: UILabel!
+    @IBOutlet weak var Lon: UILabel!
     
     var appDelegate: AppDelegate?
     
@@ -57,6 +61,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         } else {
             playRadio()
         }
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if locations.count == 0{
+        //handle error here 
+        return
+        }
+        let newLocation = locations[0]
+        
+        lat.text = String(newLocation.coordinate.latitude)
+        Lon.text = String(newLocation.coordinate.longitude)
     }
     
     func playRadio() {
