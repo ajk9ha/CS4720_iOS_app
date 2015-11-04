@@ -10,7 +10,6 @@
 		C7182D351BD47D3400D7A9A1 /* FavoriteSongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7182D341BD47D3400D7A9A1 /* FavoriteSongsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		C72012491BDDA03800DA3DD0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72012481BDDA03800DA3DD0 /* AVFoundation.framework */; };
 		C720124B1BDDA11200DA3DD0 /* RadioStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = C720124A1BDDA11200DA3DD0 /* RadioStream.swift */; settings = {ASSET_TAGS = (); }; };
-		C770B8001BE960E3009E3A07 /* CurrentPlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770B7FF1BE960E3009E3A07 /* CurrentPlaylistView.swift */; settings = {ASSET_TAGS = (); }; };
 		C7DF872A1BD1A9ED00EBC0F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF87291BD1A9ED00EBC0F0 /* AppDelegate.swift */; };
 		C7DF872C1BD1A9ED00EBC0F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF872B1BD1A9ED00EBC0F0 /* ViewController.swift */; };
 		C7DF872F1BD1A9ED00EBC0F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7DF872D1BD1A9ED00EBC0F0 /* Main.storyboard */; };
@@ -22,7 +21,6 @@
 		C7182D341BD47D3400D7A9A1 /* FavoriteSongsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteSongsViewController.swift; sourceTree = "<group>"; };
 		C72012481BDDA03800DA3DD0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C720124A1BDDA11200DA3DD0 /* RadioStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioStream.swift; sourceTree = "<group>"; };
-		C770B7FF1BE960E3009E3A07 /* CurrentPlaylistView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrentPlaylistView.swift; path = ../CurrentPlaylistView.swift; sourceTree = "<group>"; };
 		C7DF87261BD1A9ED00EBC0F0 /* WXTJRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WXTJRadio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7DF87291BD1A9ED00EBC0F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7DF872B1BD1A9ED00EBC0F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +62,6 @@
 		C7DF87281BD1A9ED00EBC0F0 /* WXTJRadio */ = {
 			isa = PBXGroup;
 			children = (
-				C770B7FF1BE960E3009E3A07 /* CurrentPlaylistView.swift */,
 				C7DF87291BD1A9ED00EBC0F0 /* AppDelegate.swift */,
 				C7DF872B1BD1A9ED00EBC0F0 /* ViewController.swift */,
 				C7182D341BD47D3400D7A9A1 /* FavoriteSongsViewController.swift */,
@@ -149,7 +146,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7182D351BD47D3400D7A9A1 /* FavoriteSongsViewController.swift in Sources */,
-				C770B8001BE960E3009E3A07 /* CurrentPlaylistView.swift in Sources */,
 				C7DF872C1BD1A9ED00EBC0F0 /* ViewController.swift in Sources */,
 				C7DF872A1BD1A9ED00EBC0F0 /* AppDelegate.swift in Sources */,
 				C720124B1BDDA11200DA3DD0 /* RadioStream.swift in Sources */,

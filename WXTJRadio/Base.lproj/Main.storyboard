@@ -18,14 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Song displayed here!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKv-M9-h1X">
-                                <rect key="frame" x="219" y="64" width="163" height="92"/>
+                                <rect key="frame" x="219" y="88" width="163" height="66"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wc6-LL-Vcc">
-                                <rect key="frame" x="20" y="164" width="560" height="111"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wc6-LL-Vcc">
+                                <rect key="frame" x="20" y="180" width="560" height="111"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your favorite song" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Unz-JS-T0p">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
@@ -61,17 +61,21 @@
                                 <constraints>
                                     <constraint firstItem="jMN-Xd-xre" firstAttribute="leading" secondItem="wc6-LL-Vcc" secondAttribute="leading" id="ABI-Pa-2w0"/>
                                     <constraint firstItem="Unz-JS-T0p" firstAttribute="leading" secondItem="wc6-LL-Vcc" secondAttribute="leading" id="Fmm-CJ-uBS"/>
-                                    <constraint firstItem="JkZ-WR-Ubo" firstAttribute="top" secondItem="jMN-Xd-xre" secondAttribute="bottom" id="Lm2-Sx-FC9"/>
+                                    <constraint firstItem="jMN-Xd-xre" firstAttribute="centerX" secondItem="wc6-LL-Vcc" secondAttribute="centerX" id="Fuf-X6-RAG"/>
                                     <constraint firstItem="8aT-cC-aui" firstAttribute="leading" secondItem="wc6-LL-Vcc" secondAttribute="leading" id="Mgt-j8-UHB"/>
                                     <constraint firstAttribute="trailing" secondItem="JkZ-WR-Ubo" secondAttribute="trailing" id="OKo-jE-qq5"/>
                                     <constraint firstAttribute="trailing" secondItem="jMN-Xd-xre" secondAttribute="trailing" id="QBn-O7-8Ge"/>
+                                    <constraint firstAttribute="height" constant="111" id="Vap-be-gx1"/>
+                                    <constraint firstItem="Unz-JS-T0p" firstAttribute="centerX" secondItem="wc6-LL-Vcc" secondAttribute="centerX" id="Xkc-77-32e"/>
+                                    <constraint firstItem="8aT-cC-aui" firstAttribute="centerX" secondItem="wc6-LL-Vcc" secondAttribute="centerX" id="a5a-6a-kWe"/>
                                     <constraint firstItem="JkZ-WR-Ubo" firstAttribute="leading" secondItem="wc6-LL-Vcc" secondAttribute="leading" id="doN-ec-Qyh"/>
                                     <constraint firstAttribute="trailing" secondItem="8aT-cC-aui" secondAttribute="trailing" id="kOc-AH-jGw"/>
                                     <constraint firstAttribute="trailing" secondItem="Unz-JS-T0p" secondAttribute="trailing" id="p47-ql-Zqw"/>
+                                    <constraint firstItem="JkZ-WR-Ubo" firstAttribute="centerX" secondItem="wc6-LL-Vcc" secondAttribute="centerX" id="vkp-ay-yhJ"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dK1-iq-hHT">
-                                <rect key="frame" x="20" y="386" width="560" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dK1-iq-hHT">
+                                <rect key="frame" x="20" y="341" width="560" height="259"/>
                                 <animations/>
                                 <state key="normal" title="Play"/>
                                 <connections>
@@ -81,17 +85,17 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="ZKv-M9-h1X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1sO-2I-M2O"/>
+                            <constraint firstItem="wc6-LL-Vcc" firstAttribute="top" secondItem="ZKv-M9-h1X" secondAttribute="bottom" constant="26" id="0iS-uC-yp3"/>
                             <constraint firstItem="wc6-LL-Vcc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3lo-z5-Obv"/>
-                            <constraint firstItem="wc6-LL-Vcc" firstAttribute="top" secondItem="Ddn-xv-uYV" secondAttribute="bottom" constant="100" id="5Ia-nC-dfc"/>
-                            <constraint firstItem="ZKv-M9-h1X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7Rz-c7-dyB"/>
-                            <constraint firstItem="ZKv-M9-h1X" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="I6A-9g-1aM"/>
+                            <constraint firstItem="ZKv-M9-h1X" firstAttribute="top" secondItem="Ddn-xv-uYV" secondAttribute="bottom" constant="24" id="8sU-Pg-Ts3"/>
+                            <constraint firstItem="oV1-Jy-GfD" firstAttribute="top" secondItem="dK1-iq-hHT" secondAttribute="bottom" id="JZW-bZ-MRf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wc6-LL-Vcc" secondAttribute="trailing" id="Ng0-gu-cSy"/>
-                            <constraint firstItem="dK1-iq-hHT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="RA3-X4-kvt"/>
-                            <constraint firstItem="ZKv-M9-h1X" firstAttribute="top" secondItem="Ddn-xv-uYV" secondAttribute="bottom" id="aBB-5J-uxd"/>
-                            <constraint firstItem="dK1-iq-hHT" firstAttribute="top" secondItem="wc6-LL-Vcc" secondAttribute="bottom" constant="111" id="w5d-tG-bvv"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dK1-iq-hHT" secondAttribute="trailing" id="zmS-4l-n19"/>
+                            <constraint firstItem="wc6-LL-Vcc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TuU-iF-g5s"/>
+                            <constraint firstItem="dK1-iq-hHT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bcZ-L5-jE9"/>
+                            <constraint firstItem="ZKv-M9-h1X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dEH-8g-2u0"/>
+                            <constraint firstItem="dK1-iq-hHT" firstAttribute="top" secondItem="wc6-LL-Vcc" secondAttribute="bottom" constant="50" id="w5d-tG-bvv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Main Page" id="uie-eO-zLB">
@@ -124,13 +128,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bh5-AI-tvo">
-                                <rect key="frame" x="180" y="286" width="240" height="128"/>
-                                <animations/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Song displayed here!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGj-Zh-Qah">
                                 <rect key="frame" x="220" y="143" width="161" height="107"/>
                                 <animations/>
@@ -168,6 +165,7 @@
                             <constraint firstItem="HtO-Dw-m49" firstAttribute="top" secondItem="LGj-Zh-Qah" secondAttribute="bottom" constant="58" id="sZj-0P-lbb"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="SIW-tM-HPx"/>
                     <connections>
                         <outlet property="playlistEntry" destination="LGj-Zh-Qah" id="Rey-Se-v4H"/>
                         <outlet property="reminderDatePicker" destination="JjA-Pc-UOG" id="VTL-z2-LvJ"/>
