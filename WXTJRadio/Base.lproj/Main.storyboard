@@ -92,6 +92,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jL7-cX-Dxe">
+                                <rect key="frame" x="20" y="431" width="531" height="106"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -117,6 +124,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="Lon" destination="Xku-7m-Df6" id="0O3-Fv-pNf"/>
+                        <outlet property="Proximity" destination="jL7-cX-Dxe" id="bC0-pq-j47"/>
                         <outlet property="artistText" destination="JkZ-WR-Ubo" id="vEH-ma-q7p"/>
                         <outlet property="lat" destination="JvY-IF-vQb" id="Kyf-MJ-9IK"/>
                         <outlet property="outputText" destination="ZKv-M9-h1X" id="5mF-ml-K9d"/>
