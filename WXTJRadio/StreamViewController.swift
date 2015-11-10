@@ -43,12 +43,12 @@ class StreamViewController: UIViewController, CLLocationManagerDelegate {
         
         distance = round(newLocation.distanceFromLocation(loc))
         
-//        if(distance > 5000){
-//            Proximity.text = "You are \n" + String( distance) + "\n meters from the station, that's too far!"
-//        }
-//        else{
-//            Proximity.text = "You are only \n" + String( distance) + "\n meters from the station.  Tune in!!!"
-//        }
+        if(distance > 5000){
+            Proximity.text = "You are " + String( distance) + "\n meters from the station, that's too far!"
+        }
+        else{
+            Proximity.text = "You are only " + String( distance) + "\n meters from the station.  Tune in!!!"
+        }
     }
 
     func locationManager(manager: CLLocationManager,
@@ -137,14 +137,7 @@ class StreamViewController: UIViewController, CLLocationManagerDelegate {
         }
 
 
-        // Do any additional setup after loading the view.
-        if(distance > 5000){
-            Proximity.text = "You are \n" + String( distance) + "\n meters from the station, that's too far!"
-        }
-        else{
-            Proximity.text = "You are only \n" + String( distance) + "\n meters from the station.  Tune in!!!"
-        }
-    }
+            }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
