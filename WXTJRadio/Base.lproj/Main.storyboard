@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f8M-NN-Yul">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f8M-NN-Yul">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -34,21 +34,21 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Song Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jMN-Xd-xre">
-                                        <rect key="frame" x="0.0" y="21" width="560" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Song Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jMN-Xd-xre">
+                                        <rect key="frame" x="0.0" y="21" width="560" height="31"/>
                                         <animations/>
                                         <accessibility key="accessibilityConfiguration" hint="Song Title"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Artist" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="JkZ-WR-Ubo">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Artist" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="JkZ-WR-Ubo">
                                         <rect key="frame" x="0.0" y="51" width="560" height="30"/>
                                         <animations/>
                                         <accessibility key="accessibilityConfiguration" hint="Artist"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aT-cC-aui">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aT-cC-aui">
                                         <rect key="frame" x="0.0" y="81" width="560" height="30"/>
                                         <animations/>
                                         <state key="normal" title="Add"/>
@@ -117,14 +117,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Song displayed here!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGj-Zh-Qah">
-                                <rect key="frame" x="220" y="143" width="161" height="107"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtO-Dw-m49">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtO-Dw-m49">
                                 <rect key="frame" x="248" y="308" width="104" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Set Reminder"/>
@@ -132,31 +125,37 @@
                                     <action selector="setReminder:" destination="9tw-GK-dtc" eventType="touchUpInside" id="0Zi-oU-ch7"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JjA-Pc-UOG">
+                            <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JjA-Pc-UOG">
                                 <rect key="frame" x="0.0" y="357" width="600" height="216"/>
                                 <animations/>
                                 <date key="date" timeIntervalSinceReferenceDate="467508977.53007102">
                                     <!--2015-10-25 23:36:17 +0000-->
                                 </date>
                             </datePicker>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="onDrag" editable="NO" text="Song here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="61x-Ec-EhN">
+                                <rect key="frame" x="158" y="127" width="240" height="128"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="LGj-Zh-Qah" secondAttribute="trailing" id="2E0-Pi-wYo"/>
                             <constraint firstItem="JjA-Pc-UOG" firstAttribute="leading" secondItem="jyE-Do-3G7" secondAttribute="leadingMargin" id="8O5-pT-uj7"/>
-                            <constraint firstItem="LGj-Zh-Qah" firstAttribute="leading" secondItem="jyE-Do-3G7" secondAttribute="leadingMargin" id="Dao-hG-FIe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HtO-Dw-m49" secondAttribute="trailing" id="IKK-Pa-xDr"/>
                             <constraint firstItem="HtO-Dw-m49" firstAttribute="leading" secondItem="jyE-Do-3G7" secondAttribute="leadingMargin" id="VUK-0l-qou"/>
-                            <constraint firstItem="LGj-Zh-Qah" firstAttribute="top" secondItem="SJX-hN-1Ny" secondAttribute="bottom" id="ZW8-gm-JeY"/>
                             <constraint firstItem="JjA-Pc-UOG" firstAttribute="top" secondItem="HtO-Dw-m49" secondAttribute="bottom" constant="19" id="e7T-IA-yV8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JjA-Pc-UOG" secondAttribute="trailing" id="eGm-N5-ATw"/>
-                            <constraint firstItem="HtO-Dw-m49" firstAttribute="top" secondItem="LGj-Zh-Qah" secondAttribute="bottom" constant="58" id="sZj-0P-lbb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SIW-tM-HPx"/>
                     <connections>
-                        <outlet property="playlistEntry" destination="LGj-Zh-Qah" id="Rey-Se-v4H"/>
+                        <outlet property="playListEntry" destination="61x-Ec-EhN" id="xsx-Ve-hp4"/>
                         <outlet property="reminderDatePicker" destination="JjA-Pc-UOG" id="VTL-z2-LvJ"/>
                     </connections>
                 </viewController>
