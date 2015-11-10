@@ -10,8 +10,8 @@
 		C7182D351BD47D3400D7A9A1 /* FavoriteSongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7182D341BD47D3400D7A9A1 /* FavoriteSongsViewController.swift */; };
 		C72012491BDDA03800DA3DD0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72012481BDDA03800DA3DD0 /* AVFoundation.framework */; };
 		C720124B1BDDA11200DA3DD0 /* RadioStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = C720124A1BDDA11200DA3DD0 /* RadioStream.swift */; };
-		C7C6C62C1BEAD31C00825CFB /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C6C62B1BEAD31C00825CFB /* PlaylistViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		C7C6C62E1BEADFAF00825CFB /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C6C62D1BEADFAF00825CFB /* StreamViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		C7C6C62C1BEAD31C00825CFB /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C6C62B1BEAD31C00825CFB /* PlaylistViewController.swift */; };
+		C7C6C62E1BEADFAF00825CFB /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C6C62D1BEADFAF00825CFB /* StreamViewController.swift */; };
 		C7DF872A1BD1A9ED00EBC0F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF87291BD1A9ED00EBC0F0 /* AppDelegate.swift */; };
 		C7DF872C1BD1A9ED00EBC0F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF872B1BD1A9ED00EBC0F0 /* ViewController.swift */; };
 		C7DF872F1BD1A9ED00EBC0F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7DF872D1BD1A9ED00EBC0F0 /* Main.storyboard */; };
@@ -33,6 +33,7 @@
 		C7DF87301BD1A9ED00EBC0F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7DF87331BD1A9ED00EBC0F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7DF87351BD1A9ED00EBC0F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E40264FD1BF191A4007560FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		E4C680A61BEAB48A0054D62A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -171,6 +172,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C7DF872E1BD1A9ED00EBC0F0 /* Base */,
+				E40264FD1BF191A4007560FB /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

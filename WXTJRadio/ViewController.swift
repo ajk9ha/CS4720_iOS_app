@@ -12,6 +12,41 @@ import AVFoundation
 import Foundation
 import CoreLocation
 
+extension NSOutputStream {
+    
+    /// Write String to outputStream
+    ///
+    /// - parameter string:                The string to write.
+    /// - parameter encoding:              The NSStringEncoding to use when writing the string. This will default to UTF8.
+    /// - parameter allowLossyConversion:  Whether to permit lossy conversion when writing the string.
+    ///
+    /// - returns:                         Return total number of bytes written upon success. Return -1 upon failure.
+    
+    func write(string: String, encoding: NSStringEncoding = NSUTF8StringEncoding, allowLossyConversion: Bool = true) -> Int {
+        if let data = string.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: allowLossyConversion) {
+            var bytes = UnsafePointer<UInt8>(data.bytes)
+            var bytesRemaining = data.length
+            var totalBytesWritten = 0
+            
+            while bytesRemaining > 0 {
+                let bytesWritten = self.write(bytes, maxLength: bytesRemaining)
+                if bytesWritten < 0 {
+                    return -1
+                }
+                
+                bytesRemaining -= bytesWritten
+                bytes += bytesWritten
+                totalBytesWritten += bytesWritten
+            }
+            
+            return totalBytesWritten
+        }
+        
+        return -1
+    }
+    
+}
+
 class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
 
     //Mark: Properties
@@ -178,10 +213,15 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         songInfoText = songText.text! + " by " + artistText.text!
         outputText.text = songInfoText
         
-        let someText = songText.text! + " by " + artistText.text!
+        let someText = songText.text! + " by " + artistText.text!+"\n"
         let destinationPath = NSTemporaryDirectory()+"savedText.txt"
         do {
-            try someText.writeToFile(destinationPath,atomically: true,encoding: NSUTF8StringEncoding)
+            if let outputStream = NSOutputStream(toFileAtPath: destinationPath, append: true) {
+                outputStream.open()
+                outputStream.write(someText)
+                
+                outputStream.close()
+            }
         } catch let error as NSError {
             print("An error occurred: \(error)") }
     }

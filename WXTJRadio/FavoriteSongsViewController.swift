@@ -11,8 +11,8 @@ import EventKit
 
 class FavoriteSongsViewController: UIViewController {
     
-    @IBOutlet weak var playlistEntry: UILabel!
     @IBOutlet weak var reminderDatePicker: UIDatePicker!
+    @IBOutlet weak var playListEntry: UITextView!
 
     var eventStore = EKEventStore()
     
@@ -29,9 +29,9 @@ class FavoriteSongsViewController: UIViewController {
         do {
             let path = NSTemporaryDirectory() + "savedText.txt"
             let readString = try String(contentsOfFile: path, encoding: NSUTF8StringEncoding)
-            playlistEntry.text = readString }
+            playListEntry.text = readString }
         catch let error as NSError {
-            playlistEntry.text = "No file saved yet!"
+            playListEntry.text = "No file saved yet!"
             print(error)
         }
     }

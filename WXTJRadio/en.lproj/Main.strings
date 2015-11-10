@@ -1,0 +1,54 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "3YN-1y-FH0"; */
+"3YN-1y-FH0.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "442-xM-HxO"; */
+"442-xM-HxO.title" = "Item 2";
+
+/* Class = "UITextView"; text = "Song here"; ObjectID = "61x-Ec-EhN"; */
+"61x-Ec-EhN.text" = "Song here";
+
+/* Class = "UIButton"; normalTitle = "Add"; ObjectID = "8aT-cC-aui"; */
+"8aT-cC-aui.normalTitle" = "Add";
+
+/* Class = "UIBarButtonItem"; title = "Next"; ObjectID = "9LY-Nh-K9Q"; */
+"9LY-Nh-K9Q.title" = "Next";
+
+/* Class = "UIButton"; normalTitle = "Set Reminder"; ObjectID = "HtO-Dw-m49"; */
+"HtO-Dw-m49.normalTitle" = "Set Reminder";
+
+/* Class = "UITextField"; accessibilityHint = "Artist"; ObjectID = "JkZ-WR-Ubo"; */
+"JkZ-WR-Ubo.accessibilityHint" = "Artist";
+
+/* Class = "UITextField"; placeholder = "Artist"; ObjectID = "JkZ-WR-Ubo"; */
+"JkZ-WR-Ubo.placeholder" = "Artist";
+
+/* Class = "UITabBarItem"; title = "Playlist"; ObjectID = "QI3-zJ-HNl"; */
+"QI3-zJ-HNl.title" = "Playlist";
+
+/* Class = "UILabel"; text = "Add your favorite song"; ObjectID = "Unz-JS-T0p"; */
+"Unz-JS-T0p.text" = "Add your favorite song";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "W6P-uV-ycm"; */
+"W6P-uV-ycm.title" = "Item";
+
+/* Class = "UILabel"; text = "Song displayed here!"; ObjectID = "ZKv-M9-h1X"; */
+"ZKv-M9-h1X.text" = "Song displayed here!";
+
+/* Class = "UITabBarItem"; title = "Favorites"; ObjectID = "ZzB-u5-nYh"; */
+"ZzB-u5-nYh.title" = "Favorites";
+
+/* Class = "UIViewController"; title = "Stream Control"; ObjectID = "eGb-B7-fcC"; */
+"eGb-B7-fcC.title" = "Stream Control";
+
+/* Class = "UITextField"; accessibilityHint = "Song Title"; ObjectID = "jMN-Xd-xre"; */
+"jMN-Xd-xre.accessibilityHint" = "Song Title";
+
+/* Class = "UITextField"; placeholder = "Song Title"; ObjectID = "jMN-Xd-xre"; */
+"jMN-Xd-xre.placeholder" = "Song Title";
+
+/* Class = "UINavigationItem"; title = "Main Page"; ObjectID = "uie-eO-zLB"; */
+"uie-eO-zLB.title" = "Main Page";
+
+/* Class = "UIButton"; normalTitle = "Play"; ObjectID = "yK2-ix-Fxw"; */
+"yK2-ix-Fxw.normalTitle" = "Play";
