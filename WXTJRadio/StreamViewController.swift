@@ -104,6 +104,8 @@ class StreamViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Stream Control"
+        
         streamIndicator.image = UIImage(named: "Stream Off")
         
         if CLLocationManager.locationServicesEnabled(){

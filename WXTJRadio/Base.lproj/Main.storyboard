@@ -87,7 +87,7 @@
                             <constraint firstItem="ZKv-M9-h1X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dEH-8g-2u0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="W6P-uV-ycm"/>
+                    <tabBarItem key="tabBarItem" title="Item" systemItem="favorites" id="W6P-uV-ycm"/>
                     <navigationItem key="navigationItem" title="Main Page" id="uie-eO-zLB">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="9LY-Nh-K9Q">
                             <connections>
@@ -132,7 +132,7 @@
                                     <!--2015-10-25 23:36:17 +0000-->
                                 </date>
                             </datePicker>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" editable="NO" text="Song here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="61x-Ec-EhN">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="onDrag" editable="NO" text="Song here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="61x-Ec-EhN">
                                 <rect key="frame" x="158" y="127" width="240" height="128"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -149,11 +149,11 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="61x-Ec-EhN" firstAttribute="leading" secondItem="jyE-Do-3G7" secondAttribute="leading" constant="158" id="7GD-wy-Hsk"/>
                             <constraint firstItem="JjA-Pc-UOG" firstAttribute="leading" secondItem="jyE-Do-3G7" secondAttribute="leadingMargin" id="8O5-pT-uj7"/>
                             <constraint firstItem="61x-Ec-EhN" firstAttribute="top" secondItem="SJX-hN-1Ny" secondAttribute="bottom" constant="63" id="HXZ-1b-5ZM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HtO-Dw-m49" secondAttribute="trailing" id="IKK-Pa-xDr"/>
                             <constraint firstItem="HtO-Dw-m49" firstAttribute="leading" secondItem="jyE-Do-3G7" secondAttribute="leadingMargin" id="VUK-0l-qou"/>
+                            <constraint firstItem="61x-Ec-EhN" firstAttribute="centerX" secondItem="jyE-Do-3G7" secondAttribute="centerX" id="aRJ-hz-vw5"/>
                             <constraint firstAttribute="bottomMargin" secondItem="JjA-Pc-UOG" secondAttribute="bottom" constant="27" id="bT8-SQ-GRD"/>
                             <constraint firstItem="JjA-Pc-UOG" firstAttribute="top" secondItem="HtO-Dw-m49" secondAttribute="bottom" constant="19" id="e7T-IA-yV8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JjA-Pc-UOG" secondAttribute="trailing" id="eGm-N5-ATw"/>
@@ -240,7 +240,7 @@
                             <constraint firstItem="3YN-1y-FH0" firstAttribute="bottom" secondItem="P7X-YC-INK" secondAttribute="top" id="sFV-Vh-kT7"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Stream Control" id="442-xM-HxO"/>
+                    <tabBarItem key="tabBarItem" title="Stream Control" image="Stream Control Selected" id="442-xM-HxO"/>
                     <connections>
                         <outlet property="Proximity" destination="3YN-1y-FH0" id="6SB-Ho-trd"/>
                         <outlet property="playButton" destination="yK2-ix-Fxw" id="tdT-S2-FfX"/>
@@ -292,7 +292,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Playlist" id="QI3-zJ-HNl"/>
+                    <tabBarItem key="tabBarItem" title="Playlist" image="Playlist Icon" id="QI3-zJ-HNl"/>
                     <connections>
                         <outlet property="playlistView" destination="4cY-xI-kKX" id="HGF-7b-sk9"/>
                     </connections>
@@ -302,4 +302,8 @@
             <point key="canvasLocation" x="-719" y="625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Playlist Icon" width="23" height="23"/>
+        <image name="Stream Control Selected" width="33" height="28"/>
+    </resources>
 </document>

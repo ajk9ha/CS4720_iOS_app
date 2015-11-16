@@ -61,7 +61,6 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
     var appDelegate: AppDelegate?
     var locationManager: CLLocationManager?
     var songInfoText = ""
-    var eventStore = EKEventStore()
     
 //    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 //        
