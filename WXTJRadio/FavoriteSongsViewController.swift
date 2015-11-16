@@ -81,7 +81,10 @@ class FavoriteSongsViewController: UIViewController {
         reminder.title = "Don't forget to tune into your favorite show!"
         reminder.calendar = appDelegate!.eventStore!.defaultCalendarForNewReminders()
         
-        var date = reminderDatePicker.date
+        print("reminder: \(reminder)")
+
+        
+        let date = reminderDatePicker.date
         print("date: \(date)")
         
         let alarm = EKAlarm(absoluteDate: date)
