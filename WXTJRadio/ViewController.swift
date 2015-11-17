@@ -47,7 +47,7 @@ extension NSOutputStream {
     
 }
 
-class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate  {
 
     //Mark: Properties
     @IBOutlet weak var artistText: UITextField!
@@ -248,7 +248,14 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         
         return true
     }
-
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if motion == .MotionShake {
+            RadioStream.sharedInstance.toggle()
+        }
+    }
 
 
 }

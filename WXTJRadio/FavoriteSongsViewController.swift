@@ -98,6 +98,14 @@ class FavoriteSongsViewController: UIViewController {
         }
         
     }
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if motion == .MotionShake {
+            RadioStream.sharedInstance.toggle()
+        }
+    }
 
     
 

@@ -27,6 +27,14 @@ class PlaylistViewController: UIViewController, UIWebViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if motion == .MotionShake {
+            RadioStream.sharedInstance.toggle()
+        }
+    }
     
 
     /*

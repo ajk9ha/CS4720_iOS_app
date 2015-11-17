@@ -137,9 +137,27 @@ class StreamViewController: UIViewController, CLLocationManagerDelegate {
             }
             locationManager?.requestLocation()
         }
-
+        if(RadioStream.sharedInstance.currentlyPlaying()){
+            playButton.setTitle("Pause", forState: UIControlState.Normal)
+            streamIndicator.image = UIImage(named: "Stream On")
+        }
+        else{
+            playButton.setTitle("Play", forState: UIControlState.Normal)
+            streamIndicator.image = UIImage(named: "Stream Off")
+        }
 
             }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if(RadioStream.sharedInstance.currentlyPlaying()){
+            playButton.setTitle("Pause", forState: UIControlState.Normal)
+            streamIndicator.image = UIImage(named: "Stream On")
+        }
+        else{
+            playButton.setTitle("Play", forState: UIControlState.Normal)
+            streamIndicator.image = UIImage(named: "Stream Off")
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -172,6 +190,14 @@ class StreamViewController: UIViewController, CLLocationManagerDelegate {
         streamIndicator.image = UIImage(named: "Stream Off")
 
         
+    }
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if motion == .MotionShake {
+            self.toggle()
+        }
     }
 
     /*
