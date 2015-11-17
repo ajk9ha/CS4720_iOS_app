@@ -26,7 +26,7 @@ class StreamViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if locations.count == 0{
-            //handle error here
+            Proximity.text = "Location currentyl unavailable"
             return
         }
         
@@ -135,15 +135,7 @@ class StreamViewController: UIViewController, CLLocationManagerDelegate {
                     message: "Location services are not allowed for this app")
                 locationManager?.requestAlwaysAuthorization()
             }
-            locationManager?.requestLocation()
-        }
-        if(RadioStream.sharedInstance.currentlyPlaying()){
-            playButton.setTitle("Pause", forState: UIControlState.Normal)
-            streamIndicator.image = UIImage(named: "Stream On")
-        }
-        else{
-            playButton.setTitle("Play", forState: UIControlState.Normal)
-            streamIndicator.image = UIImage(named: "Stream Off")
+            
         }
 
             }
@@ -157,6 +149,7 @@ class StreamViewController: UIViewController, CLLocationManagerDelegate {
             playButton.setTitle("Play", forState: UIControlState.Normal)
             streamIndicator.image = UIImage(named: "Stream Off")
         }
+        locationManager?.requestLocation()
     }
 
     override func didReceiveMemoryWarning() {
