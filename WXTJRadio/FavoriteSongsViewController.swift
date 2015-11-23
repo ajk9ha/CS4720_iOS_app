@@ -31,7 +31,7 @@ class FavoriteSongsViewController: UIViewController {
             let readString = try String(contentsOfFile: path, encoding: NSUTF8StringEncoding)
             playListEntry.text = readString }
         catch let error as NSError {
-            playListEntry.text = "No file saved yet!"
+            playListEntry.text = "No songs saved yet!"
             print(error)
         }
     }

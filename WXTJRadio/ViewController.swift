@@ -143,7 +143,7 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
             let readString = try String(contentsOfFile: path, encoding: NSUTF8StringEncoding)
             outputText.text = readString }
             catch let error as NSError {
-            outputText.text = "No file saved yet!"
+            outputText.text = "No songs saved yet!"
             print(error)
         }
 //        if CLLocationManager.locationServicesEnabled(){
@@ -224,6 +224,9 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         } catch let error as NSError {
             print("An error occurred: \(error)") }
     }
+    
+    @IBAction func displayLyrics(segue: AnyObject) {
+    }
         
     
     // MARK: - Navigation
@@ -233,12 +236,21 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        songInfoText = songText.text! + " by " + artistText.text!
+        if(segue.identifier == "LyricSegue") {
+            
+            let lyricsView = segue.destinationViewController as! LyricsViewController
         
-        let favoritesView = segue.destinationViewController as! FavoriteSongsViewController
+        } else {
+            songInfoText = songText.text! + " by " + artistText.text!
         
-        favoritesView.playlistText = songInfoText
+            print(segue.identifier)
+        
+            let favoritesView = segue.destinationViewController as! FavoriteSongsViewController
+        
+            favoritesView.playlistText = songInfoText
+        }
     }
+    
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
