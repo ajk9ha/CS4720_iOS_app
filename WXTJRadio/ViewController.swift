@@ -239,6 +239,8 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         if(segue.identifier == "LyricSegue") {
             
             let lyricsView = segue.destinationViewController as! LyricsViewController
+            lyricsView.artistText = artistText.text!
+            lyricsView.songText = songText.text!
         
         } else {
             songInfoText = songText.text! + " by " + artistText.text!

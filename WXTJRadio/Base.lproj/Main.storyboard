@@ -129,43 +129,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sRw-jE-bnb">
-                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="750" editable="NO" text="Could not find the lyrics to that particular song.  Sorry!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sRw-jE-bnb">
+                                <rect key="frame" x="0.0" y="136" width="600" height="464"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="S7P-Pk-yar"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yiN-So-zbQ">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yiN-So-zbQ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <animations/>
                                 <items>
                                     <navigationItem id="ic2-N1-bhi">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="mfy-TA-sLR">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="JMC-bz-Nkb"/>
+                                                <segue destination="nGe-TS-LXr" kind="show" id="opI-za-XGr"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8c-9f-HiS">
+                                <rect key="frame" x="20" y="79" width="560" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="sRw-jE-bnb" firstAttribute="top" secondItem="8RE-3K-fs1" secondAttribute="bottom" constant="216" id="LQa-04-Zf1"/>
-                            <constraint firstItem="sRw-jE-bnb" firstAttribute="centerY" secondItem="1Fr-6f-WYe" secondAttribute="centerY" id="euF-2R-TYh"/>
-                            <constraint firstItem="sRw-jE-bnb" firstAttribute="centerX" secondItem="1Fr-6f-WYe" secondAttribute="centerX" id="hUC-ED-zRO"/>
+                            <constraint firstItem="sRw-jE-bnb" firstAttribute="leading" secondItem="1Fr-6f-WYe" secondAttribute="leading" id="1vR-cG-iU1"/>
+                            <constraint firstAttribute="trailing" secondItem="sRw-jE-bnb" secondAttribute="trailing" id="CTs-2n-man"/>
+                            <constraint firstItem="sRw-jE-bnb" firstAttribute="trailing" secondItem="yiN-So-zbQ" secondAttribute="trailing" id="Lpg-oD-8TJ"/>
+                            <constraint firstItem="sRw-jE-bnb" firstAttribute="leading" secondItem="yiN-So-zbQ" secondAttribute="leading" id="bFG-jT-izt"/>
+                            <constraint firstItem="bx6-7O-p82" firstAttribute="top" secondItem="sRw-jE-bnb" secondAttribute="bottom" id="f6c-2i-xPd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="x8c-9f-HiS" secondAttribute="trailing" id="hkl-pt-0yh"/>
+                            <constraint firstItem="x8c-9f-HiS" firstAttribute="top" secondItem="yiN-So-zbQ" secondAttribute="bottom" constant="35" id="icy-Ve-pnb"/>
+                            <constraint firstItem="yiN-So-zbQ" firstAttribute="top" secondItem="1Fr-6f-WYe" secondAttribute="top" id="qwE-ci-fxV"/>
+                            <constraint firstItem="sRw-jE-bnb" firstAttribute="top" secondItem="x8c-9f-HiS" secondAttribute="bottom" constant="36" id="vVu-L7-YBb"/>
+                            <constraint firstItem="x8c-9f-HiS" firstAttribute="leading" secondItem="1Fr-6f-WYe" secondAttribute="leadingMargin" id="wrD-oz-kjo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="qsG-IP-JBz"/>
+                    <connections>
+                        <outlet property="lyricsText" destination="sRw-jE-bnb" id="e5a-Or-OX7"/>
+                        <outlet property="songInfo" destination="x8c-9f-HiS" id="eUB-e6-78k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lio-F9-nF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="275" y="573"/>
+            <point key="canvasLocation" x="108" y="625"/>
         </scene>
         <!--Favorite Songs View Controller-->
         <scene sceneID="KtX-hA-jHM">
@@ -369,6 +383,6 @@
         <image name="Stream Control Selected" width="33" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JMC-bz-Nkb"/>
+        <segue reference="opI-za-XGr"/>
     </inferredMetricsTieBreakers>
 </document>
