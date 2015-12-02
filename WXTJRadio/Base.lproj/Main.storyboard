@@ -34,21 +34,21 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Song Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jMN-Xd-xre">
-                                        <rect key="frame" x="0.0" y="21" width="560" height="31"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Song Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jMN-Xd-xre">
+                                        <rect key="frame" x="0.0" y="21" width="560" height="30"/>
                                         <animations/>
                                         <accessibility key="accessibilityConfiguration" hint="Song Title"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Artist" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="JkZ-WR-Ubo">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Artist" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="JkZ-WR-Ubo">
                                         <rect key="frame" x="0.0" y="51" width="560" height="30"/>
                                         <animations/>
                                         <accessibility key="accessibilityConfiguration" hint="Artist"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aT-cC-aui">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aT-cC-aui">
                                         <rect key="frame" x="0.0" y="81" width="560" height="30"/>
                                         <animations/>
                                         <state key="normal" title="Add"/>
@@ -74,6 +74,16 @@
                                     <constraint firstItem="JkZ-WR-Ubo" firstAttribute="centerX" secondItem="wc6-LL-Vcc" secondAttribute="centerX" id="vkp-ay-yhJ"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52R-gR-SD1">
+                                <rect key="frame" x="261" y="316" width="78" height="30"/>
+                                <animations/>
+                                <accessibility key="accessibilityConfiguration" identifier="lyrics"/>
+                                <state key="normal" title="View Lyrics"/>
+                                <connections>
+                                    <action selector="displayLyrics:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xcs-gH-Hfh"/>
+                                    <segue destination="VbH-iL-yfn" kind="presentation" identifier="LyricSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="My9-sC-MiU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -82,9 +92,11 @@
                             <constraint firstItem="wc6-LL-Vcc" firstAttribute="top" secondItem="ZKv-M9-h1X" secondAttribute="bottom" constant="26" id="0iS-uC-yp3"/>
                             <constraint firstItem="wc6-LL-Vcc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3lo-z5-Obv"/>
                             <constraint firstItem="ZKv-M9-h1X" firstAttribute="top" secondItem="Ddn-xv-uYV" secondAttribute="bottom" constant="24" id="8sU-Pg-Ts3"/>
+                            <constraint firstItem="52R-gR-SD1" firstAttribute="top" secondItem="wc6-LL-Vcc" secondAttribute="bottom" constant="25" id="9Gn-Id-f7u"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wc6-LL-Vcc" secondAttribute="trailing" id="Ng0-gu-cSy"/>
                             <constraint firstItem="wc6-LL-Vcc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TuU-iF-g5s"/>
                             <constraint firstItem="ZKv-M9-h1X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dEH-8g-2u0"/>
+                            <constraint firstItem="52R-gR-SD1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dzJ-M9-dXe"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" systemItem="favorites" id="W6P-uV-ycm"/>
@@ -104,6 +116,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="147" y="-250"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="c9U-5o-sta">
+            <objects>
+                <viewController id="VbH-iL-yfn" customClass="LyricsViewController" customModule="WXTJRadio" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8RE-3K-fs1"/>
+                        <viewControllerLayoutGuide type="bottom" id="bx6-7O-p82"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Fr-6f-WYe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="750" editable="NO" text="Could not find the lyrics to that particular song.  Sorry!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sRw-jE-bnb">
+                                <rect key="frame" x="0.0" y="136" width="600" height="464"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yiN-So-zbQ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem id="ic2-N1-bhi">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="mfy-TA-sLR">
+                                            <connections>
+                                                <segue destination="nGe-TS-LXr" kind="show" id="opI-za-XGr"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8c-9f-HiS">
+                                <rect key="frame" x="20" y="79" width="560" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sRw-jE-bnb" firstAttribute="leading" secondItem="1Fr-6f-WYe" secondAttribute="leading" id="1vR-cG-iU1"/>
+                            <constraint firstAttribute="trailing" secondItem="sRw-jE-bnb" secondAttribute="trailing" id="CTs-2n-man"/>
+                            <constraint firstItem="sRw-jE-bnb" firstAttribute="trailing" secondItem="yiN-So-zbQ" secondAttribute="trailing" id="Lpg-oD-8TJ"/>
+                            <constraint firstItem="sRw-jE-bnb" firstAttribute="leading" secondItem="yiN-So-zbQ" secondAttribute="leading" id="bFG-jT-izt"/>
+                            <constraint firstItem="bx6-7O-p82" firstAttribute="top" secondItem="sRw-jE-bnb" secondAttribute="bottom" id="f6c-2i-xPd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="x8c-9f-HiS" secondAttribute="trailing" id="hkl-pt-0yh"/>
+                            <constraint firstItem="x8c-9f-HiS" firstAttribute="top" secondItem="yiN-So-zbQ" secondAttribute="bottom" constant="35" id="icy-Ve-pnb"/>
+                            <constraint firstItem="yiN-So-zbQ" firstAttribute="top" secondItem="1Fr-6f-WYe" secondAttribute="top" id="qwE-ci-fxV"/>
+                            <constraint firstItem="sRw-jE-bnb" firstAttribute="top" secondItem="x8c-9f-HiS" secondAttribute="bottom" constant="36" id="vVu-L7-YBb"/>
+                            <constraint firstItem="x8c-9f-HiS" firstAttribute="leading" secondItem="1Fr-6f-WYe" secondAttribute="leadingMargin" id="wrD-oz-kjo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="qsG-IP-JBz"/>
+                    <connections>
+                        <outlet property="lyricsText" destination="sRw-jE-bnb" id="e5a-Or-OX7"/>
+                        <outlet property="songInfo" destination="x8c-9f-HiS" id="eUB-e6-78k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lio-F9-nF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108" y="625"/>
         </scene>
         <!--Favorite Songs View Controller-->
         <scene sceneID="KtX-hA-jHM">
@@ -298,4 +374,7 @@
         <image name="Playlist Icon" width="23" height="23"/>
         <image name="Stream Control Selected" width="33" height="28"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="opI-za-XGr"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -10,6 +10,7 @@
 		C7182D351BD47D3400D7A9A1 /* FavoriteSongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7182D341BD47D3400D7A9A1 /* FavoriteSongsViewController.swift */; };
 		C72012491BDDA03800DA3DD0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72012481BDDA03800DA3DD0 /* AVFoundation.framework */; };
 		C720124B1BDDA11200DA3DD0 /* RadioStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = C720124A1BDDA11200DA3DD0 /* RadioStream.swift */; };
+		C74442011C03BE0A008CAC95 /* LyricsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74442001C03BE0A008CAC95 /* LyricsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		C7C6C62C1BEAD31C00825CFB /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C6C62B1BEAD31C00825CFB /* PlaylistViewController.swift */; };
 		C7C6C62E1BEADFAF00825CFB /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C6C62D1BEADFAF00825CFB /* StreamViewController.swift */; };
 		C7DF872A1BD1A9ED00EBC0F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF87291BD1A9ED00EBC0F0 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 		C7182D341BD47D3400D7A9A1 /* FavoriteSongsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteSongsViewController.swift; sourceTree = "<group>"; };
 		C72012481BDDA03800DA3DD0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C720124A1BDDA11200DA3DD0 /* RadioStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioStream.swift; sourceTree = "<group>"; };
+		C74442001C03BE0A008CAC95 /* LyricsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LyricsViewController.swift; sourceTree = "<group>"; };
 		C7C6C62B1BEAD31C00825CFB /* PlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		C7C6C62D1BEADFAF00825CFB /* StreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamViewController.swift; sourceTree = "<group>"; };
 		C7DF87261BD1A9ED00EBC0F0 /* WXTJRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WXTJRadio.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +86,7 @@
 				C7DF87301BD1A9ED00EBC0F0 /* Assets.xcassets */,
 				C7DF87321BD1A9ED00EBC0F0 /* LaunchScreen.storyboard */,
 				C7DF87351BD1A9ED00EBC0F0 /* Info.plist */,
+				C74442001C03BE0A008CAC95 /* LyricsViewController.swift */,
 			);
 			path = WXTJRadio;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				C7DF872C1BD1A9ED00EBC0F0 /* ViewController.swift in Sources */,
 				E437134F1C0FAF3D00E9A3F6 /* Song.xcdatamodeld in Sources */,
 				C7DF872A1BD1A9ED00EBC0F0 /* AppDelegate.swift in Sources */,
+				C74442011C03BE0A008CAC95 /* LyricsViewController.swift in Sources */,
 				C720124B1BDDA11200DA3DD0 /* RadioStream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
