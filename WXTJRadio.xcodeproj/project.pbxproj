@@ -17,6 +17,7 @@
 		C7DF872F1BD1A9ED00EBC0F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7DF872D1BD1A9ED00EBC0F0 /* Main.storyboard */; };
 		C7DF87311BD1A9ED00EBC0F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7DF87301BD1A9ED00EBC0F0 /* Assets.xcassets */; };
 		C7DF87341BD1A9ED00EBC0F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7DF87321BD1A9ED00EBC0F0 /* LaunchScreen.storyboard */; };
+		E437134F1C0FAF3D00E9A3F6 /* Song.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E437134D1C0FAF3D00E9A3F6 /* Song.xcdatamodeld */; };
 		E4C680A71BEAB48A0054D62A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C680A61BEAB48A0054D62A /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		C7DF87331BD1A9ED00EBC0F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7DF87351BD1A9ED00EBC0F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E40264FD1BF191A4007560FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		E437134E1C0FAF3D00E9A3F6 /* Song.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Song.xcdatamodel; sourceTree = "<group>"; };
 		E4C680A61BEAB48A0054D62A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -53,6 +55,7 @@
 		C7DF871D1BD1A9EC00EBC0F0 = {
 			isa = PBXGroup;
 			children = (
+				E437134D1C0FAF3D00E9A3F6 /* Song.xcdatamodeld */,
 				E4C680A61BEAB48A0054D62A /* CoreLocation.framework */,
 				C72012481BDDA03800DA3DD0 /* AVFoundation.framework */,
 				C7DF87281BD1A9ED00EBC0F0 /* WXTJRadio */,
@@ -160,6 +163,7 @@
 				C7C6C62C1BEAD31C00825CFB /* PlaylistViewController.swift in Sources */,
 				C7C6C62E1BEADFAF00825CFB /* StreamViewController.swift in Sources */,
 				C7DF872C1BD1A9ED00EBC0F0 /* ViewController.swift in Sources */,
+				E437134F1C0FAF3D00E9A3F6 /* Song.xcdatamodeld in Sources */,
 				C7DF872A1BD1A9ED00EBC0F0 /* AppDelegate.swift in Sources */,
 				C720124B1BDDA11200DA3DD0 /* RadioStream.swift in Sources */,
 			);
@@ -319,6 +323,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E437134D1C0FAF3D00E9A3F6 /* Song.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E437134E1C0FAF3D00E9A3F6 /* Song.xcdatamodel */,
+			);
+			currentVersion = E437134E1C0FAF3D00E9A3F6 /* Song.xcdatamodel */;
+			path = Song.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C7DF871E1BD1A9EC00EBC0F0 /* Project object */;
 }

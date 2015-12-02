@@ -11,6 +11,7 @@ import EventKit
 import AVFoundation
 import Foundation
 import CoreLocation
+import CoreData
 
 extension NSOutputStream {
     
@@ -47,7 +48,9 @@ extension NSOutputStream {
     
 }
 
-class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate  {
+
+
+class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, NSXMLParserDelegate  {
 
     //Mark: Properties
     @IBOutlet weak var artistText: UITextField!
@@ -61,6 +64,10 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
     var appDelegate: AppDelegate?
     var locationManager: CLLocationManager?
     var songInfoText = ""
+    var currentParsedElement = String()
+    var weAreInsideAnItem = false
+     var Lyrics: String!
+    var songs = [NSManagedObject]()
     
 //    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 //        
@@ -215,9 +222,21 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         let someText = songText.text! + " by " + artistText.text!+"\n"
         let destinationPath = NSTemporaryDirectory()+"savedText.txt"
         do {
+            let artist: String = artistText.text!
+            let finalartist = artist.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            let song: String = songText.text!
+            let finalsong = song.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            let urlstring = "http://api.chartlyrics.com/apiv1.asmx/SearchLyricDirect?artist="+finalartist+"&song="+finalsong
+            let url = NSURL(string: urlstring)
+            let xmlParser = NSXMLParser(contentsOfURL: url!)
+            xmlParser!.delegate = self
+            xmlParser!.parse()
+            
+            
+            
             if let outputStream = NSOutputStream(toFileAtPath: destinationPath, append: true) {
                 outputStream.open()
-                outputStream.write(someText)
+                outputStream.write(self.Lyrics)
                 
                 outputStream.close()
             }
@@ -256,6 +275,22 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
             RadioStream.sharedInstance.toggle()
         }
     }
+     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String:String] ){
+        switch elementName {
+        case "Lyric":
+            Lyrics = String()
+            currentParsedElement = elementName
+        default:break
+        }
+    }
+    func parser(parser: NSXMLParser, foundCharacters string: String) {
+            if( currentParsedElement=="Lyric"){
+                Lyrics = Lyrics + string
+                print(Lyrics)
+            
+            }
+        }
+   
 
 
 }

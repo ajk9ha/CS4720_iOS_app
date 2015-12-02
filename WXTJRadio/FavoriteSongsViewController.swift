@@ -8,13 +8,15 @@
 
 import UIKit
 import EventKit
-
+import CoreData
 class FavoriteSongsViewController: UIViewController {
     
     @IBOutlet weak var reminderDatePicker: UIDatePicker!
     @IBOutlet weak var playListEntry: UITextView!
 
     var eventStore = EKEventStore()
+    @IBOutlet weak var PlayListTable: UITableView!
+
     
     var appDelegate: AppDelegate?
     

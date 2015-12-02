@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f8M-NN-Yul">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f8M-NN-Yul">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -132,37 +132,29 @@
                                     <!--2015-10-25 23:36:17 +0000-->
                                 </date>
                             </datePicker>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="onDrag" editable="NO" text="Song here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="61x-Ec-EhN">
-                                <rect key="frame" x="158" y="127" width="240" height="128"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lwP-YJ-iYN">
+                                <rect key="frame" x="122" y="132" width="240" height="128"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" notEnabled="YES"/>
-                                </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="q4r-yL-uKw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <connections>
+                                    <outlet property="dataSource" destination="9tw-GK-dtc" id="k5D-rU-3YM"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JjA-Pc-UOG" firstAttribute="leading" secondItem="jyE-Do-3G7" secondAttribute="leadingMargin" id="8O5-pT-uj7"/>
-                            <constraint firstItem="61x-Ec-EhN" firstAttribute="top" secondItem="SJX-hN-1Ny" secondAttribute="bottom" constant="63" id="HXZ-1b-5ZM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HtO-Dw-m49" secondAttribute="trailing" id="IKK-Pa-xDr"/>
                             <constraint firstItem="HtO-Dw-m49" firstAttribute="leading" secondItem="jyE-Do-3G7" secondAttribute="leadingMargin" id="VUK-0l-qou"/>
-                            <constraint firstItem="61x-Ec-EhN" firstAttribute="centerX" secondItem="jyE-Do-3G7" secondAttribute="centerX" id="aRJ-hz-vw5"/>
                             <constraint firstAttribute="bottomMargin" secondItem="JjA-Pc-UOG" secondAttribute="bottom" constant="27" id="bT8-SQ-GRD"/>
                             <constraint firstItem="JjA-Pc-UOG" firstAttribute="top" secondItem="HtO-Dw-m49" secondAttribute="bottom" constant="19" id="e7T-IA-yV8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JjA-Pc-UOG" secondAttribute="trailing" id="eGm-N5-ATw"/>
-                            <constraint firstItem="HtO-Dw-m49" firstAttribute="top" secondItem="61x-Ec-EhN" secondAttribute="bottom" constant="53" id="huN-Lj-gs1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SIW-tM-HPx"/>
                     <connections>
-                        <outlet property="playListEntry" destination="61x-Ec-EhN" id="xsx-Ve-hp4"/>
+                        <outlet property="PlayListTable" destination="lwP-YJ-iYN" id="GgY-hi-J1h"/>
                         <outlet property="reminderDatePicker" destination="JjA-Pc-UOG" id="VTL-z2-LvJ"/>
                     </connections>
                 </viewController>
