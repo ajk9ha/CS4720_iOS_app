@@ -231,8 +231,7 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
             insertIntoManagedObjectContext: managedContext)
         
         //3
-        song.setValue(songText.text!, forKey: "title")
-        song.setValue(artistText.text!, forKey: "artist")
+        song.setValue(songInfoText, forKey: "title")
         
         //4
         do {

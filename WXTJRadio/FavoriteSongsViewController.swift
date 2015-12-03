@@ -9,7 +9,7 @@
 import UIKit
 import EventKit
 import CoreData
-class FavoriteSongsViewController: UIViewController, UITableViewDataSource {
+class FavoriteSongsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var reminderDatePicker: UIDatePicker!
     @IBOutlet weak var playListEntry: UITextView!
@@ -27,6 +27,7 @@ class FavoriteSongsViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         PlayListTable.registerClass(UITableViewCell.self,
             forCellReuseIdentifier: "Cell")
+        PlayListTable.delegate = self
 
         // Do any additional setup after loading the view.
         
@@ -60,6 +61,22 @@ class FavoriteSongsViewController: UIViewController, UITableViewDataSource {
             self.createReminder()
         }
         
+    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("HERE")
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        managedContext.deleteObject(songs[indexPath.row] as NSManagedObject)
+        songs.removeAtIndex(indexPath.row)
+        do {
+            try managedContext.save()
+            //5
+            self.PlayListTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -130,7 +147,7 @@ class FavoriteSongsViewController: UIViewController, UITableViewDataSource {
             return songs.count
     }
     
-    func tableView(tableView: UITableView,
+     func tableView(tableView: UITableView,
         cellForRowAtIndexPath
         indexPath: NSIndexPath) -> UITableViewCell {
             

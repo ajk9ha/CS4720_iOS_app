@@ -15,6 +15,8 @@ class LyricsViewController: UIViewController, NSXMLParserDelegate {
     
     var weAreInsideAnItem = false
     var Lyrics: String!
+    var LyricSong: String!
+    var LyricArtist: String!
     var currentParsedElement = String()
     var artistText = ""
     var songText = ""
@@ -31,15 +33,16 @@ class LyricsViewController: UIViewController, NSXMLParserDelegate {
         let xmlParser = NSXMLParser(contentsOfURL: url!)
         xmlParser!.delegate = self
         xmlParser!.parse()
-       
+        if(LyricSong != "" && LyricArtist != ""){
+            songInfo.text = LyricSong + " by \n" + LyricArtist
+            
+        }
         if(Lyrics != "") {
             lyricsText.text = Lyrics
         } else {
             lyricsText.text = "Could not find song"
         }
         lyricsText.text = Lyrics
-        
-        songInfo.text = songText + " by " + artistText
         
         
         
@@ -56,13 +59,27 @@ class LyricsViewController: UIViewController, NSXMLParserDelegate {
         case "Lyric":
             Lyrics = String()
             currentParsedElement = elementName
+        case "LyricSong":
+            LyricSong = String()
+            currentParsedElement = elementName
+        case "LyricArtist":
+            LyricArtist = String()
+            currentParsedElement = elementName
         default:break
         }
     }
     func parser(parser: NSXMLParser, foundCharacters string: String) {
         if( currentParsedElement=="Lyric"){
             Lyrics = Lyrics + string
-            print(Lyrics)
+            
+        }
+        if( currentParsedElement=="LyricSong"){
+            LyricSong = LyricSong + string
+            
+        }
+        if( currentParsedElement=="LyricArtist"){
+            LyricArtist = LyricArtist + string
+            currentParsedElement = ""
             
         }
     }
