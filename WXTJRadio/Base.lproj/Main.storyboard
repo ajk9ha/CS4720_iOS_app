@@ -34,7 +34,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Song Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jMN-Xd-xre">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Song Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jMN-Xd-xre">
                                         <rect key="frame" x="0.0" y="21" width="560" height="30"/>
                                         <animations/>
                                         <accessibility key="accessibilityConfiguration" hint="Song Title"/>
@@ -193,62 +193,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtO-Dw-m49">
-                                <rect key="frame" x="248" y="308" width="104" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtO-Dw-m49">
+                                <rect key="frame" x="20" y="308" width="560" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Set Reminder"/>
                                 <connections>
                                     <action selector="setReminder:" destination="9tw-GK-dtc" eventType="touchUpInside" id="0Zi-oU-ch7"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JjA-Pc-UOG">
-                                <rect key="frame" x="0.0" y="357" width="600" height="216"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JjA-Pc-UOG">
+                                <rect key="frame" x="20" y="357" width="560" height="216"/>
                                 <animations/>
                                 <date key="date" timeIntervalSinceReferenceDate="467508977.53007102">
                                     <!--2015-10-25 23:36:17 +0000-->
                                 </date>
                             </datePicker>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QNW-uN-ZvG" userLabel="PlayListTable">
-                                <rect key="frame" x="20" y="20" width="560" height="128"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Your Favorite Songs " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGR-11-6DX">
+                                <rect key="frame" x="40" y="0.0" width="512" height="57"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="9IU-xj-mrO"/>
+                                    <constraint firstAttribute="height" constant="40" id="6eW-ZY-Gz9"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="dataSource" destination="9tw-GK-dtc" id="pXE-MS-AQn"/>
-                                </connections>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Your Favorite Songs " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGR-11-6DX">
-                                <rect key="frame" x="40" y="0.0" width="512" height="40"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="53"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Touch a song to remove it from your favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glb-tB-UOR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch a song to remove it from your favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glb-tB-UOR">
                                 <rect key="frame" x="126" y="60" width="349" height="21"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="349" id="e3O-Iw-5xt"/>
+                                </constraints>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QNW-uN-ZvG" userLabel="PlayListTable">
+                                <rect key="frame" x="20" y="100" width="560" height="171"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9tw-GK-dtc" id="pXE-MS-AQn"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="QNW-uN-ZvG" firstAttribute="trailing" secondItem="jyE-Do-3G7" secondAttribute="trailingMargin" id="324-Ks-vyi"/>
+                            <constraint firstItem="Glb-tB-UOR" firstAttribute="top" secondItem="zGR-11-6DX" secondAttribute="bottom" constant="20" id="4yr-BM-RDx"/>
                             <constraint firstItem="JjA-Pc-UOG" firstAttribute="leading" secondItem="jyE-Do-3G7" secondAttribute="leadingMargin" id="8O5-pT-uj7"/>
+                            <constraint firstItem="QNW-uN-ZvG" firstAttribute="leading" secondItem="jyE-Do-3G7" secondAttribute="leadingMargin" id="9s1-pY-9SR"/>
                             <constraint firstItem="QNW-uN-ZvG" firstAttribute="top" secondItem="SJX-hN-1Ny" secondAttribute="bottom" id="CVX-St-Ky9"/>
+                            <constraint firstItem="zGR-11-6DX" firstAttribute="leading" secondItem="jyE-Do-3G7" secondAttribute="leadingMargin" constant="20" id="DTX-Zd-rBI"/>
                             <constraint firstItem="QNW-uN-ZvG" firstAttribute="leading" secondItem="jyE-Do-3G7" secondAttribute="leadingMargin" id="I6b-jU-35X"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HtO-Dw-m49" secondAttribute="trailing" id="IKK-Pa-xDr"/>
+                            <constraint firstItem="HtO-Dw-m49" firstAttribute="top" secondItem="QNW-uN-ZvG" secondAttribute="bottom" constant="37" id="Mws-9U-Yrl"/>
+                            <constraint firstItem="QNW-uN-ZvG" firstAttribute="top" secondItem="Glb-tB-UOR" secondAttribute="bottom" constant="19" id="OIM-7A-W6A"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zGR-11-6DX" secondAttribute="trailing" constant="28" id="Qpj-Dy-x3l"/>
                             <constraint firstItem="HtO-Dw-m49" firstAttribute="leading" secondItem="jyE-Do-3G7" secondAttribute="leadingMargin" id="VUK-0l-qou"/>
+                            <constraint firstItem="QNW-uN-ZvG" firstAttribute="top" secondItem="Glb-tB-UOR" secondAttribute="bottom" constant="19" id="Z8J-ai-48V"/>
                             <constraint firstAttribute="bottomMargin" secondItem="JjA-Pc-UOG" secondAttribute="bottom" constant="27" id="bT8-SQ-GRD"/>
+                            <constraint firstItem="zGR-11-6DX" firstAttribute="top" secondItem="jyE-Do-3G7" secondAttribute="top" id="cc2-G5-SMw"/>
                             <constraint firstItem="JjA-Pc-UOG" firstAttribute="top" secondItem="HtO-Dw-m49" secondAttribute="bottom" constant="19" id="e7T-IA-yV8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JjA-Pc-UOG" secondAttribute="trailing" id="eGm-N5-ATw"/>
+                            <constraint firstItem="zGR-11-6DX" firstAttribute="top" secondItem="jyE-Do-3G7" secondAttribute="topMargin" id="hoo-X6-lMR"/>
+                            <constraint firstItem="Glb-tB-UOR" firstAttribute="centerX" secondItem="QNW-uN-ZvG" secondAttribute="centerX" id="iEK-5J-Fem"/>
+                            <constraint firstItem="QNW-uN-ZvG" firstAttribute="trailing" secondItem="jyE-Do-3G7" secondAttribute="trailingMargin" id="jKC-rH-pzv"/>
+                            <constraint firstItem="Glb-tB-UOR" firstAttribute="top" secondItem="zGR-11-6DX" secondAttribute="bottom" constant="20" id="p5a-h5-tNn"/>
                             <constraint firstItem="Glb-tB-UOR" firstAttribute="top" secondItem="zGR-11-6DX" secondAttribute="bottom" constant="20" id="teV-nZ-xHl"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="hoo-X6-lMR"/>
+                                <exclude reference="CVX-St-Ky9"/>
+                                <exclude reference="OIM-7A-W6A"/>
+                                <exclude reference="4yr-BM-RDx"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="SIW-tM-HPx"/>
                     <connections>
