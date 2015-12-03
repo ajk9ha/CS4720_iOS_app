@@ -50,7 +50,7 @@ extension NSOutputStream {
 
 
 
-class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, NSXMLParserDelegate  {
+class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, NSXMLParserDelegate, UITableViewDataSource,UITableViewDelegate  {
 
     //Mark: Properties
     @IBOutlet weak var artistText: UITextField!
@@ -61,14 +61,14 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
 //    @IBOutlet weak var Lon: UILabel!
 //    @IBOutlet weak var Proximity: UILabel!
     
+    @IBOutlet weak var ScrapedPlaylist: UITableView!
+    var songs = [String]()
     var appDelegate: AppDelegate?
     var locationManager: CLLocationManager?
     var songInfoText = ""
     var currentParsedElement = String()
     var weAreInsideAnItem = false
      var Lyrics: String!
-    var songs = [NSManagedObject]()
-    
 //    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 //        
 //        if locations.count == 0{
@@ -140,11 +140,33 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
 //            }
 //        }
 //    }
+    // MARK: UITableViewDataSource
+    func tableView(tableView: UITableView,
+        numberOfRowsInSection section: Int) -> Int {
+            return songs.count
+    }
+    
+    func tableView(tableView: UITableView,
+        cellForRowAtIndexPath
+        indexPath: NSIndexPath) -> UITableViewCell {
+            
+            let cell =
+            tableView.dequeueReusableCellWithIdentifier("Cell")
+            
+            cell!.textLabel!.text = songs[indexPath.row]
+            
+            return cell!
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.songs.append(String("Hey Ya by Outkast"))
+        self.songs.append(String("Hey Ya by MJ"))
+        ScrapedPlaylist.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         songText.delegate = self
         artistText.delegate = self
+        ScrapedPlaylist.registerClass(UITableViewCell.self,
+            forCellReuseIdentifier: "Cell")
         do {
             let path = NSTemporaryDirectory() + "savedText.txt"
             let readString = try String(contentsOfFile: path, encoding: NSUTF8StringEncoding)
@@ -237,7 +259,6 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         do {
             try managedContext.save()
             //5
-            songs.append(song)
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
@@ -265,6 +286,31 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         } catch let error as NSError {
             print("An error occurred: \(error)") }
 */
+    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("HERE")
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let entity =  NSEntityDescription.entityForName("Song",
+            inManagedObjectContext:managedContext)
+        
+        let song = NSManagedObject(entity: entity!,
+            insertIntoManagedObjectContext: managedContext)
+        
+        //3
+        song.setValue(songs[indexPath.row], forKey: "title")
+        
+        //4
+        do {
+            try managedContext.save()
+            //5
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
     }
     
     @IBAction func displayLyrics(segue: AnyObject) {
