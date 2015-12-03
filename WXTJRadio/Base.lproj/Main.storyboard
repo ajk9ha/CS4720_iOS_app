@@ -34,21 +34,21 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Song Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jMN-Xd-xre">
-                                        <rect key="frame" x="0.0" y="21" width="560" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Song Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jMN-Xd-xre">
+                                        <rect key="frame" x="0.0" y="21" width="560" height="31"/>
                                         <animations/>
                                         <accessibility key="accessibilityConfiguration" hint="Song Title"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Artist" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="JkZ-WR-Ubo">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Artist" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="JkZ-WR-Ubo">
                                         <rect key="frame" x="0.0" y="51" width="560" height="30"/>
                                         <animations/>
                                         <accessibility key="accessibilityConfiguration" hint="Artist"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aT-cC-aui">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aT-cC-aui">
                                         <rect key="frame" x="0.0" y="81" width="560" height="30"/>
                                         <animations/>
                                         <state key="normal" title="Add"/>
@@ -208,12 +208,12 @@
                                     <!--2015-10-25 23:36:17 +0000-->
                                 </date>
                             </datePicker>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lwP-YJ-iYN">
-                                <rect key="frame" x="122" y="132" width="240" height="128"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QNW-uN-ZvG" userLabel="PlayListTable">
+                                <rect key="frame" x="93" y="106" width="240" height="128"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="9tw-GK-dtc" id="k5D-rU-3YM"/>
+                                    <outlet property="dataSource" destination="9tw-GK-dtc" id="pXE-MS-AQn"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -230,7 +230,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="SIW-tM-HPx"/>
                     <connections>
-                        <outlet property="PlayListTable" destination="lwP-YJ-iYN" id="GgY-hi-J1h"/>
+                        <outlet property="PlayListTable" destination="QNW-uN-ZvG" id="sdF-xz-Kb5"/>
                         <outlet property="reminderDatePicker" destination="JjA-Pc-UOG" id="VTL-z2-LvJ"/>
                     </connections>
                 </viewController>

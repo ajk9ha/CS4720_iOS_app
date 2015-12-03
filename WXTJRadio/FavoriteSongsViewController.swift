@@ -9,13 +9,13 @@
 import UIKit
 import EventKit
 import CoreData
-class FavoriteSongsViewController: UIViewController {
+class FavoriteSongsViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var reminderDatePicker: UIDatePicker!
     @IBOutlet weak var playListEntry: UITextView!
-
     var eventStore = EKEventStore()
     @IBOutlet weak var PlayListTable: UITableView!
+    var songs = [NSManagedObject]()
 
     
     var appDelegate: AppDelegate?
@@ -25,17 +25,12 @@ class FavoriteSongsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        PlayListTable.registerClass(UITableViewCell.self,
+            forCellReuseIdentifier: "Cell")
 
         // Do any additional setup after loading the view.
         
-        do {
-            let path = NSTemporaryDirectory() + "savedText.txt"
-            let readString = try String(contentsOfFile: path, encoding: NSUTF8StringEncoding)
-            playListEntry.text = readString }
-        catch let error as NSError {
-            playListEntry.text = "No songs saved yet!"
-            print(error)
-        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +60,27 @@ class FavoriteSongsViewController: UIViewController {
             self.createReminder()
         }
         
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //1
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let fetchRequest = NSFetchRequest(entityName: "Song")
+        
+        //3
+        do {
+            let results =
+            try managedContext.executeFetchRequest(fetchRequest)
+            songs = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
     }
     
     /* Code for setting the details of the alarm notification */
@@ -109,7 +125,25 @@ class FavoriteSongsViewController: UIViewController {
         }
     }
 
+    func tableView(tableView: UITableView,
+        numberOfRowsInSection section: Int) -> Int {
+            return songs.count
+    }
     
+    func tableView(tableView: UITableView,
+        cellForRowAtIndexPath
+        indexPath: NSIndexPath) -> UITableViewCell {
+            
+            let cell =
+            tableView.dequeueReusableCellWithIdentifier("Cell")
+            
+            let song = songs[indexPath.row]
+            
+            cell!.textLabel!.text =
+                song.valueForKey("title") as? String
+            
+            return cell!
+    }
 
     /*
     // MARK: - Navigation

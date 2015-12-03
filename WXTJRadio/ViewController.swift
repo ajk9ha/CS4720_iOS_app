@@ -218,8 +218,31 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
     @IBAction func setSong(sender: UIButton) {
         songInfoText = songText.text! + " by " + artistText.text!
         outputText.text = songInfoText
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
         
-        let someText = songText.text! + " by " + artistText.text!+"\n"
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let entity =  NSEntityDescription.entityForName("Song",
+            inManagedObjectContext:managedContext)
+        
+        let song = NSManagedObject(entity: entity!,
+            insertIntoManagedObjectContext: managedContext)
+        
+        //3
+        song.setValue(songText.text!, forKey: "title")
+        song.setValue(artistText.text!, forKey: "artist")
+        
+        //4
+        do {
+            try managedContext.save()
+            //5
+            songs.append(song)
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+       /* let someText = songText.text! + " by " + artistText.text!+"\n"
         let destinationPath = NSTemporaryDirectory()+"savedText.txt"
         do {
             let artist: String = artistText.text!
@@ -242,6 +265,7 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
             }
         } catch let error as NSError {
             print("An error occurred: \(error)") }
+*/
     }
     
     @IBAction func displayLyrics(segue: AnyObject) {
