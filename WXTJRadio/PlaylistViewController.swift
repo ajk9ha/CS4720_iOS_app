@@ -17,8 +17,9 @@ class PlaylistViewController: UIViewController, UIWebViewDelegate {
         
         let playlistUrl = NSURL(string: "http://www.wtju.net/player/?station=wtjx")
         let request = NSURLRequest(URL: playlistUrl!)
-        
         playlistView.loadRequest(request)
+
+    
 
         // Do any additional setup after loading the view.
     }

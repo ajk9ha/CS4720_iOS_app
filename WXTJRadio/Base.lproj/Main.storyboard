@@ -148,7 +148,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8c-9f-HiS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8c-9f-HiS">
                                 <rect key="frame" x="20" y="79" width="560" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -219,6 +219,21 @@
                                     <outlet property="dataSource" destination="9tw-GK-dtc" id="pXE-MS-AQn"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Your Favorite Songs " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGR-11-6DX">
+                                <rect key="frame" x="40" y="0.0" width="512" height="40"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="53"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Touch a song to remove it from your favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glb-tB-UOR">
+                                <rect key="frame" x="126" y="60" width="349" height="21"/>
+                                <animations/>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -232,6 +247,7 @@
                             <constraint firstAttribute="bottomMargin" secondItem="JjA-Pc-UOG" secondAttribute="bottom" constant="27" id="bT8-SQ-GRD"/>
                             <constraint firstItem="JjA-Pc-UOG" firstAttribute="top" secondItem="HtO-Dw-m49" secondAttribute="bottom" constant="19" id="e7T-IA-yV8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JjA-Pc-UOG" secondAttribute="trailing" id="eGm-N5-ATw"/>
+                            <constraint firstItem="Glb-tB-UOR" firstAttribute="top" secondItem="zGR-11-6DX" secondAttribute="bottom" constant="20" id="teV-nZ-xHl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SIW-tM-HPx"/>
