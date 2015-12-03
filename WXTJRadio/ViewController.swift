@@ -69,7 +69,8 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
     var currentParsedElement = String()
     var weAreInsideAnItem = false
      var Lyrics: String!
-//    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    var dupcheck = [NSManagedObject]()
+    //    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 //        
 //        if locations.count == 0{
 //            //handle error here
@@ -289,6 +290,7 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("HERE")
+        var dup = false
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
         
@@ -300,7 +302,27 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         
         let song = NSManagedObject(entity: entity!,
             insertIntoManagedObjectContext: managedContext)
+        let fetchRequest = NSFetchRequest(entityName: "Song")
+        let predicate = NSPredicate(format: "title == %@", songs[indexPath.row])
+        fetchRequest.predicate = predicate
         
+        //3
+        do {
+            let results =
+            try managedContext.executeFetchRequest(fetchRequest)
+             dupcheck = results as! [NSManagedObject]
+            if(dupcheck.count>0){
+                dup = true
+            }
+        
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+    
+        if(dup){
+        
+        }
+        else{
         //3
         song.setValue(songs[indexPath.row], forKey: "title")
         
@@ -310,6 +332,7 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
             //5
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
+        }
         }
     }
     
