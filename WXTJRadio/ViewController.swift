@@ -160,8 +160,8 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.songs.append(String("Hey Ya by Outkast"))
-        self.songs.append(String("Hey Ya by MJ"))
+//        self.songs.append(String("Hey Ya by Outkast"))
+//        self.songs.append(String("Hey Ya by MJ"))
         ScrapedPlaylist.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         songText.delegate = self
@@ -205,6 +205,53 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
 //            }
 //         locationManager?.requestLocation()
 //    }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.songs.removeAll()
+        
+        let playlistWebData = NSURL(string: "https://www.kimonolabs.com/api/dbrjzo1k?apikey=518QlQEXbKNCMvlKWVLHxr9lxgVdD4yL")
+        let dataToBeRead = NSData(contentsOfURL: playlistWebData!)
+        
+        var songTitles = [String]()
+        var artistNames = [String]()
+        
+        do {
+            let jsonContent =  try NSJSONSerialization.JSONObjectWithData(dataToBeRead!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+            
+            let jsonResults = jsonContent["results"] as? NSDictionary
+            print(jsonResults?["collection1"])
+        
+            if let playlist = jsonResults?["collection1"] as? NSArray {
+                for songs in playlist {
+                    if let songTitle = songs["songTitle"] as? String {
+                        print(songTitle)
+                        songTitles.append(songTitle)
+                    }
+                }
+                for artists in playlist {
+                    if let artistName = artists["artistName"] as? String {
+                        print(artistName)
+                        artistNames.append(artistName)
+                    }
+                }
+            }
+    
+            print(songTitles)
+            print(artistNames)
+        
+        } catch let err as NSError {
+            print("nil")
+        }
+        
+        var fullString = ""
+        
+        for var i = songTitles.count-1; i >= 0; --i {
+            fullString = songTitles[i] + " by " + artistNames[i]
+            self.songs.append(fullString)
+            
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
