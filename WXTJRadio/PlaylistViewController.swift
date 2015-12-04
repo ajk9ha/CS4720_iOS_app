@@ -7,17 +7,26 @@
 //
 
 import UIKit
+import EventKit
+
 
 class PlaylistViewController: UIViewController, UIWebViewDelegate {
 
+    var appDelegate: AppDelegate?
+
+    
     @IBOutlet weak var playlistView: UIWebView!
+    @IBOutlet weak var reminderDatePicker: UIDatePicker!
+    var eventStore = EKEventStore()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Reminder"
         
-        let playlistUrl = NSURL(string: "http://www.wtju.net/player/?station=wtjx")
-        let request = NSURLRequest(URL: playlistUrl!)
-        playlistView.loadRequest(request)
+//        let playlistUrl = NSURL(string: "http://www.wtju.net/player/?station=wtjx")
+//        let request = NSURLRequest(URL: playlistUrl!)
+//        playlistView.loadRequest(request)
 
     
 
@@ -37,6 +46,64 @@ class PlaylistViewController: UIViewController, UIWebViewDelegate {
         }
     }
     
+    /* Code for setting up the Alarm notification, which calls createReminder */
+    @IBAction func setReminder(sender: UIButton) {
+        
+        appDelegate = UIApplication.sharedApplication().delegate
+            as? AppDelegate
+        if appDelegate!.eventStore == nil {
+            appDelegate!.eventStore = EKEventStore()
+            appDelegate!.eventStore!.requestAccessToEntityType(
+                EKEntityType.Reminder, completion: {(granted, error) in
+                    if !granted {
+                        print("Access to store not granted")
+                        print(error!.localizedDescription)
+                    } else {
+                        print("Access granted")
+                    }
+            })
+        }
+        
+        if (appDelegate!.eventStore != nil) {
+            self.createReminder()
+        }
+        
+    }
+    
+    /* Code for setting the details of the alarm notification */
+    func createReminder() {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .MediumStyle
+        
+        eventStore.requestAccessToEntityType(EKEntityType.Reminder,
+            completion: {(granted: Bool, error:NSError?) in
+                if !granted {
+                    print("Access to store not granted")
+                }
+        })
+        
+        let reminder = EKReminder(eventStore: appDelegate!.eventStore!)
+        reminder.title = "Don't forget to tune into your favorite show!"
+        reminder.calendar = appDelegate!.eventStore!.defaultCalendarForNewReminders()
+        
+        print("reminder: \(reminder)")
+        
+        
+        let date = reminderDatePicker.date
+        print("date: \(date)")
+        
+        let alarm = EKAlarm(absoluteDate: date)
+        
+        reminder.addAlarm(alarm)
+        
+        do {
+            try appDelegate!.eventStore!.saveReminder(reminder, commit:true)
+        } catch {
+            return
+        }
+        
+    }
+
 
     /*
     // MARK: - Navigation

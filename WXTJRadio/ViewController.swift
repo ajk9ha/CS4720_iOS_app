@@ -55,7 +55,8 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
     //Mark: Properties
     @IBOutlet weak var artistText: UITextField!
     @IBOutlet weak var songText: UITextField!
-    @IBOutlet weak var outputText: UILabel!
+    @IBOutlet weak var lookUpLyrics: UILabel!
+        
 //    @IBOutlet weak var playButton: UIButton!
 //    @IBOutlet weak var lat: UILabel!
 //    @IBOutlet weak var Lon: UILabel!
@@ -160,6 +161,14 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Currently Playing"
+        
+        lookUpLyrics.text = "Look up lyrics"
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+        
 //        self.songs.append(String("Hey Ya by Outkast"))
 //        self.songs.append(String("Hey Ya by MJ"))
         ScrapedPlaylist.delegate = self
@@ -171,41 +180,42 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         do {
             let path = NSTemporaryDirectory() + "savedText.txt"
             let readString = try String(contentsOfFile: path, encoding: NSUTF8StringEncoding)
-            outputText.text = readString }
+            //outputText.text = readString 
+        }
             catch let error as NSError {
-            outputText.text = "No songs saved yet!"
+            //outputText.text = "No songs saved yet!"
             print(error)
         }
-//        if CLLocationManager.locationServicesEnabled(){
-//            
-//            /* Do we have authorization to access location services? */
-//            switch CLLocationManager.authorizationStatus(){
-//            case .AuthorizedAlways:
-//                /* Yes, always */
-//                createLocationManager(startImmediately: true)
-//            case .AuthorizedWhenInUse:
-//                /* Yes, only when our app is in use */
-//                createLocationManager(startImmediately: true)
-//            case .Denied:
-//                /* No */
-//                displayAlertWithTitle("Not Determined",
-//                    message: "Location services are not allowed for this app")
-//            case .NotDetermined:
-//                /* We don't know yet, we have to ask */
-//                createLocationManager(startImmediately: true)
-//                if let manager = self.locationManager{
-//                    manager.requestAlwaysAuthorization()
-//                }
-//            case .Restricted:
-//                /* Restrictions have been applied, we have no access
-//                to location services */
-//                displayAlertWithTitle("Restricted",
-//                    message: "Location services are not allowed for this app")
-//               locationManager?.requestAlwaysAuthorization()
-//            }
-//         locationManager?.requestLocation()
-//    }
+
     }
+    
+    func keyboardWillShow(sender: NSNotification) {
+        
+        let userInfo: [NSObject : AnyObject] = sender.userInfo!
+        
+        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.size
+        let offset: CGSize = userInfo[UIKeyboardFrameEndUserInfoKey]!.CGRectValue.size
+        
+        if keyboardSize.height == offset.height {
+            if self.view.frame.origin.y == 0 {
+                UIView.animateWithDuration(0.1, animations: { () -> Void in
+                    self.view.frame.origin.y -= keyboardSize.height
+                })
+            }
+        } else {
+            UIView.animateWithDuration(0.1, animations: { () -> Void in
+                self.view.frame.origin.y += keyboardSize.height - offset.height
+            })
+        }
+        
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        let userInfo: [NSObject : AnyObject] = sender.userInfo!
+        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.size
+        self.view.frame.origin.y += keyboardSize.height
+    }
+
     
     override func viewWillAppear(animated: Bool) {
         self.songs.removeAll()
@@ -246,7 +256,7 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         
         var fullString = ""
         
-        for var i = songTitles.count-1; i >= 0; --i {
+        for var i = 0; i < songTitles.count ; ++i {
             fullString = songTitles[i] + " by " + artistNames[i]
             self.songs.append(fullString)
             
@@ -287,7 +297,7 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
     // Mark: Actions
     @IBAction func setSong(sender: UIButton) {
         songInfoText = songText.text! + " by " + artistText.text!
-        outputText.text = songInfoText
+        //outputText.text = songInfoText
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
         

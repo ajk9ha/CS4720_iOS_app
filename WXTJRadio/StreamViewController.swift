@@ -26,7 +26,7 @@ class StreamViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if locations.count == 0{
-            Proximity.text = "Location currentyl unavailable"
+            Proximity.text = "Location currently unavailable"
             return
         }
         
